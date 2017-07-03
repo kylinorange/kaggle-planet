@@ -7,6 +7,7 @@ sudo apt-get install libncurses5-dev
 # sudo apt-get install python-dev
 # sudo apt-get install python-pip
 sudo apt-get install libjpeg8-dev
+sudo apt-get install libcupti-dev
 sudo ln -s /usr/lib/x86_64-linux-gnu/libjpeg.so /usr/lib
 sudo apt-get install build-essential libssl-dev libffi-dev python-dev
 sudo apt-get install -y python3-pip
@@ -22,6 +23,3 @@ echo "**************************************************"
 echo "*****  End of Google Cloud Set-up Script  ********"
 echo "**************************************************"
 echo ""
-echo "If you had no errors, You can proceed to work with your virtualenv as normal."
-echo "(run 'source .env/bin/activate' in your assignment directory to load the venv,"
-echo " and run 'deactivate' to exit the venv. See assignment handout for details.)"
