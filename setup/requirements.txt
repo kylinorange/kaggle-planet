@@ -44,3 +44,10 @@ six==1.10.0
 terminado==0.5
 tornado==4.3
 traitlets==4.0.0
+pandas
+keras
+tensorflow
+tensorflow-gpu
+seaborn
+scikit-image==0.12.3
+scikit-learn==0.18.1
