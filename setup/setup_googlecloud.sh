@@ -2,19 +2,22 @@
 
 # This is the set-up script for Google Cloud.
 sudo apt-get update
+sudo apt-get -y upgrade
 sudo apt-get install libncurses5-dev
-sudo apt-get install python-dev
-sudo apt-get install python-pip
+# sudo apt-get install python-dev
+# sudo apt-get install python-pip
 sudo apt-get install libjpeg8-dev
 sudo ln -s /usr/lib/x86_64-linux-gnu/libjpeg.so /usr/lib
-pip install pillow
+sudo apt-get install build-essential libssl-dev libffi-dev python-dev
+sudo apt-get install -y python3-pip
+pip3 install pillow
 sudo apt-get build-dep python-imaging
 sudo apt-get install libjpeg8 libjpeg62-dev libfreetype6 libfreetype6-dev
-sudo pip install virtualenv  
-virtualenv .env                  # Create a virtual environment
-source .env/bin/activate         # Activate the virtual environment
-pip install -r requirements.txt  # Install dependencies
-deactivate
+# sudo pip install virtualenv  
+# virtualenv .env                  # Create a virtual environment
+# source .env/bin/activate         # Activate the virtual environment
+pip3 install -r requirements.txt  # Install dependencies
+# deactivate
 echo "**************************************************"
 echo "*****  End of Google Cloud Set-up Script  ********"
 echo "**************************************************"
