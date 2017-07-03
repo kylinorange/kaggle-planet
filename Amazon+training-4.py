@@ -18,13 +18,13 @@ import pandas as pd
 pd.set_option('display.max_column', 100)
 
 # Matplotlib for visualization
-from matplotlib import pyplot as plt
+# from matplotlib import pyplot as plt
 
 # display plots in the notebook
 # get_ipython().magic('matplotlib inline')
 
 # Seaborn for easier visualization
-import seaborn as sns
+# import seaborn as sns
 
 # Import Logistic Regression
 from sklearn.linear_model import LogisticRegression
@@ -90,9 +90,9 @@ def load_train_image(n, dbg=False):
     path = os.path.abspath(os.path.join(PLANET_KAGGLE_ROOT, 'train-jpg', 'train_{}.jpg'.format(n)))
     if os.path.exists(path):
         img = io.imread(path)
-        if dbg:
-            plt.figure()
-            plt.imshow(img)
+        # if dbg:
+        #     plt.figure()
+        #     plt.imshow(img)
         return img
     # if you reach this line, you didn't find the image you're looking for
     print('Load failed: could not find image {}'.format(path))
