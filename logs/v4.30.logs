@@ -1,0 +1,80 @@
+2017-07-03 19:41:08.848462: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2017-07-03 19:41:08.848521: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-07-03 19:41:08.848534: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-07-03 19:41:08.848543: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-07-03 19:41:08.848553: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+2017-07-03 19:41:08.998341: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2017-07-03 19:41:08.998852: I tensorflow/core/common_runtime/gpu/gpu_device.cc:887] Found device 0 with properties:
+name: Tesla K80
+major: 3 minor: 7 memoryClockRate (GHz) 0.8235
+pciBusID 0000:00:1e.0
+Total memory: 11.17GiB
+Free memory: 11.11GiB
+2017-07-03 19:41:08.998895: I tensorflow/core/common_runtime/gpu/gpu_device.cc:908] DMA: 0
+2017-07-03 19:41:08.998908: I tensorflow/core/common_runtime/gpu/gpu_device.cc:918] 0:   Y
+2017-07-03 19:41:08.998923: I tensorflow/core/common_runtime/gpu/gpu_device.cc:977] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla K80, pci bus id: 0000:00:1e.0)
+
+Epoch 1/30
+1000/1000 [==============================] - 841s - loss: 0.2663 - amazon_score: 0.6965 - acc: 0.8989 - val_loss: 0.2500 - val_amazon_score: 0.7255 - val_acc: 0.9124
+Epoch 2/30
+1000/1000 [==============================] - 731s - loss: 0.2190 - amazon_score: 0.7409 - acc: 0.9133 - val_loss: 0.2244 - val_amazon_score: 0.7162 - val_acc: 0.9175
+Epoch 3/30
+1000/1000 [==============================] - 729s - loss: 0.1961 - amazon_score: 0.7867 - acc: 0.9211 - val_loss: 0.2195 - val_amazon_score: 0.7823 - val_acc: 0.9252
+Epoch 4/30
+1000/1000 [==============================] - 729s - loss: 0.1897 - amazon_score: 0.7916 - acc: 0.9238 - val_loss: 0.1910 - val_amazon_score: 0.7906 - val_acc: 0.9241
+Epoch 5/30
+1000/1000 [==============================] - 729s - loss: 0.1884 - amazon_score: 0.7968 - acc: 0.9242 - val_loss: 0.2273 - val_amazon_score: 0.7841 - val_acc: 0.9227
+Epoch 6/30
+1000/1000 [==============================] - 729s - loss: 0.1865 - amazon_score: 0.8015 - acc: 0.9247 - val_loss: 0.1892 - val_amazon_score: 0.8108 - val_acc: 0.9297
+Epoch 7/30
+1000/1000 [==============================] - 729s - loss: 0.1809 - amazon_score: 0.8051 - acc: 0.9278 - val_loss: 0.1772 - val_amazon_score: 0.8200 - val_acc: 0.9318
+Epoch 8/30
+1000/1000 [==============================] - 727s - loss: 0.1748 - amazon_score: 0.8175 - acc: 0.9291 - val_loss: 0.1784 - val_amazon_score: 0.8189 - val_acc: 0.9316
+Epoch 9/30
+1000/1000 [==============================] - 727s - loss: 0.1686 - amazon_score: 0.8245 - acc: 0.9310 - val_loss: 0.1662 - val_amazon_score: 0.8235 - val_acc: 0.9331
+Epoch 10/30
+1000/1000 [==============================] - 727s - loss: 0.1637 - amazon_score: 0.8296 - acc: 0.9334 - val_loss: 0.1747 - val_amazon_score: 0.8330 - val_acc: 0.9354
+Epoch 11/30
+1000/1000 [==============================] - 727s - loss: 0.1597 - amazon_score: 0.8343 - acc: 0.9354 - val_loss: 0.1598 - val_amazon_score: 0.8402 - val_acc: 0.9371
+Epoch 12/30
+1000/1000 [==============================] - 727s - loss: 0.1551 - amazon_score: 0.8382 - acc: 0.9375 - val_loss: 0.1552 - val_amazon_score: 0.8412 - val_acc: 0.9407
+Epoch 13/30
+1000/1000 [==============================] - 730s - loss: 0.1504 - amazon_score: 0.8421 - acc: 0.9398 - val_loss: 0.1500 - val_amazon_score: 0.8528 - val_acc: 0.9431
+Epoch 14/30
+1000/1000 [==============================] - 732s - loss: 0.1460 - amazon_score: 0.8479 - acc: 0.9416 - val_loss: 0.1543 - val_amazon_score: 0.8503 - val_acc: 0.9427
+Epoch 15/30
+1000/1000 [==============================] - 732s - loss: 0.1439 - amazon_score: 0.8510 - acc: 0.9424 - val_loss: 0.1831 - val_amazon_score: 0.8428 - val_acc: 0.9391
+Epoch 16/30
+1000/1000 [==============================] - 731s - loss: 0.1400 - amazon_score: 0.8557 - acc: 0.9438 - val_loss: 0.1563 - val_amazon_score: 0.8508 - val_acc: 0.9449
+Epoch 17/30
+ 999/1000 [============================>.] - ETA: 0s - loss: 0.1361 - amazon_score: 0.8604 - acc: 0.9453
+Epoch 00016: reducing learning rate to 0.0005000000237487257.
+1000/1000 [==============================] - 732s - loss: 0.1361 - amazon_score: 0.8604 - acc: 0.9453 - val_loss: 0.1866 - val_amazon_score: 0.8419 - val_acc: 0.9408
+Epoch 18/30
+1000/1000 [==============================] - 729s - loss: 0.1299 - amazon_score: 0.8676 - acc: 0.9478 - val_loss: 0.1513 - val_amazon_score: 0.8580 - val_acc: 0.9459
+Epoch 19/30
+1000/1000 [==============================] - 730s - loss: 0.1251 - amazon_score: 0.8717 - acc: 0.9498 - val_loss: 0.1501 - val_amazon_score: 0.8527 - val_acc: 0.9450
+Epoch 20/30
+1000/1000 [==============================] - 733s - loss: 0.1214 - amazon_score: 0.8759 - acc: 0.9513 - val_loss: 0.1456 - val_amazon_score: 0.8572 - val_acc: 0.9472
+Epoch 21/30
+1000/1000 [==============================] - 732s - loss: 0.1191 - amazon_score: 0.8775 - acc: 0.9525 - val_loss: 0.1394 - val_amazon_score: 0.8593 - val_acc: 0.9470
+Epoch 22/30
+1000/1000 [==============================] - 729s - loss: 0.1163 - amazon_score: 0.8811 - acc: 0.9533 - val_loss: 0.1409 - val_amazon_score: 0.8592 - val_acc: 0.9486
+Epoch 23/30
+1000/1000 [==============================] - 729s - loss: 0.1144 - amazon_score: 0.8841 - acc: 0.9538 - val_loss: 0.1563 - val_amazon_score: 0.8535 - val_acc: 0.9450
+Epoch 24/30
+1000/1000 [==============================] - 729s - loss: 0.1119 - amazon_score: 0.8876 - acc: 0.9549 - val_loss: 0.1451 - val_amazon_score: 0.8569 - val_acc: 0.9468
+Epoch 25/30
+1000/1000 [==============================] - 730s - loss: 0.1082 - amazon_score: 0.8907 - acc: 0.9565 - val_loss: 0.1370 - val_amazon_score: 0.8611 - val_acc: 0.9493
+Epoch 26/30
+1000/1000 [==============================] - 730s - loss: 0.1050 - amazon_score: 0.8939 - acc: 0.9578 - val_loss: 0.1458 - val_amazon_score: 0.8608 - val_acc: 0.9478
+Epoch 27/30
+1000/1000 [==============================] - 730s - loss: 0.1024 - amazon_score: 0.8977 - acc: 0.9593 - val_loss: 0.1476 - val_amazon_score: 0.8560 - val_acc: 0.9474
+Epoch 28/30
+1000/1000 [==============================] - 730s - loss: 0.1003 - amazon_score: 0.9007 - acc: 0.9599 - val_loss: 0.1535 - val_amazon_score: 0.8497 - val_acc: 0.9471
+Epoch 29/30
+ 999/1000 [============================>.] - ETA: 0s - loss: 0.0987 - amazon_score: 0.9019 - acc: 0.9602
+Epoch 00028: reducing learning rate to 0.0002500000118743628.
+1000/1000 [==============================] - 730s - loss: 0.0987 - amazon_score: 0.9020 - acc: 0.9602 - val_loss: 0.1483 - val_amazon_score: 0.8579 - val_acc: 0.9484
+Epoch 30/30
+1000/1000 [==============================] - 730s - loss: 0.0926 - amazon_score: 0.9086 - acc: 0.9630 - val_loss: 0.1495 - val_amazon_score: 0.8583 - val_acc: 0.9493
