@@ -20,10 +20,10 @@ pd.set_option('display.max_column', 100)
 # Matplotlib for visualization
 # from matplotlib import pyplot as plt
 
-# display plots in the notebook
+# # display plots in the notebook
 # get_ipython().magic('matplotlib inline')
 
-# Seaborn for easier visualization
+# # Seaborn for easier visualization
 # import seaborn as sns
 
 # Import Logistic Regression
@@ -65,6 +65,7 @@ from keras.optimizers import SGD, Adam
 import os
 from skimage import io
 
+# PLANET_KAGGLE_ROOT = '/Users/jiayou/Documents/Kaggle Data/Amazon'
 PLANET_KAGGLE_ROOT = '/data/planet-data/'
 
 N_TAGS = 17
@@ -230,7 +231,6 @@ def gen_test_data(batch_size):
     start = 0
     while start < N_TEST:
         end = min(start + batch_size, N_TEST)
-        print('Yielding test images {} to {}...'.format(start, end))
         yield get_test_data(range(start, end))
         start = end
 
@@ -339,27 +339,24 @@ def new_resnet50():
     return model
 
 
-# In[25]:
+# In[32]:
 
 def predict(model_path):
     model = load_model(model_path)
     print('Model weights loaded')
     
-#     pred = None
-#     cnt = 0
-#     print('Start predicting..')
-#     for X_test in gen_test_data(100):
-#         y_test = model.predict(X_test)
-#         if pred is None:
-#             pred = y_test
-#         else:
-#             pred = np.concatenate((pred, y_test))
-#         cnt += len(y_test)
-#         print('Predicted {} images'.format(cnt))
-#     print('Predicted all {} images'.format(cnt))
-    batch = 100
-    steps = int((N_TEST + batch - 1) / batch)
-    pred = model.predict_generator(gen_test_data(batch), steps)
+    pred = None
+    cnt = 0
+    print('Start predicting..')
+    for X_test in gen_test_data(100):
+        y_test = model.predict_on_batch(X_test)
+        if pred is None:
+            pred = y_test
+        else:
+            pred = np.concatenate((pred, y_test))
+        cnt += len(y_test)
+        print('Predicted {} images'.format(cnt))
+    print('Predicted all {} images'.format(cnt))
             
     print('Saving raw predictions...')
     np.save('raw_pred.npy', pred)
@@ -420,9 +417,14 @@ def predict(model_path):
 
 # # Prediction
 
-# In[28]:
+# In[120]:
 
 out = predict('/data/kaggle-planet/weights-v4.24-0.86-0.14.hdf5')
+
+
+# In[ ]:
+
+
 
 
 # In[ ]:
