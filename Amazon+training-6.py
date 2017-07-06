@@ -87,7 +87,7 @@ def load_test_image(n):
     print('Load failed: could not find image {}'.format(path))
       
 def preprocess_image(img):
-    img = downscale_local_mean(img, (2, 2, 1))
+    img = downscale_local_mean(img, (1, 1, 1))
     img = np.array(img)
     img = img.astype('float32')
     img = img / 255 - 0.5
@@ -295,7 +295,7 @@ from keras.models import Model
 import numpy as np
 
 def new_resnet50():
-    base_model = ResNet50(weights=None, include_top=False, input_tensor = Input(shape=(128, 128, 3)))
+    base_model = ResNet50(weights=None, include_top=False, input_tensor = Input(shape=(256, 256, 3)))
     
     # add a global spatial average pooling layer
     x = base_model.output
