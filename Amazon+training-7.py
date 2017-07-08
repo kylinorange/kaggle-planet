@@ -386,15 +386,19 @@ def train():
     X_val, y_val = get_training_data([x for x in range(N_TRAIN) if x % 5 == 0], tif=True, verbose=True)
     gc.collect()
     
-    model = new_model()
+    # model = new_model()
+    model = load_model('/data/kaggle-planet/weights-v7.hdf5')
+    model.compile(metrics=[amazon_score, 'accuracy'],
+                  loss='binary_crossentropy',
+                  optimizer=Adam(lr=1e-5))
     
     h = model.fit(
         X_train, y_train, batch_size=32, verbose=1,
         validation_data=(X_val, y_val),
-        epochs=40, initial_epoch=0,
+        epochs=60, initial_epoch=40,
         callbacks=[
             ModelCheckpoint('weights-v7.hdf5', save_best_only=True, verbose=1),
-            ReduceLROnPlateau(monitor='val_loss', factor=0.5, patience=2, min_lr=0.000001, verbose=1)],
+            ReduceLROnPlateau(monitor='val_loss', factor=0.5, patience=2, min_lr=0, verbose=1)],
     )
     return h
 
