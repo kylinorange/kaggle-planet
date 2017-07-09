@@ -23,7 +23,7 @@ from skimage import io
 from skimage.transform import rescale, resize, downscale_local_mean
 
 
-# In[18]:
+# In[25]:
 
 # PLANET_KAGGLE_ROOT = '/Users/jiayou/Documents/Kaggle Data/Amazon'
 PLANET_KAGGLE_ROOT = '/data/planet-data/'
@@ -90,7 +90,7 @@ def preprocess_image(img):
     return img
 
 
-# In[10]:
+# In[26]:
 
 train_labels = pd.read_csv(os.path.join(PLANET_KAGGLE_ROOT, 'train_v2.csv'))
 
@@ -107,12 +107,13 @@ for i in range(len(label_list)):
 label_idx = {v: k for k, v in label_map.items()}
 
 
-# In[11]:
+# In[27]:
 
 def get_training_data(file_ids, tif=False, dbg=False, verbose=False):
     if verbose:
         print('Getting {} training images...'.format(len(file_ids)))
     X_train = np.zeros((len(file_ids), 256, 256, 4 if tif else 3))
+    X_train = X_train.astype('float16')
     for i in range(len(file_ids)):
         X_train[i,:,:,:] = preprocess_image(load_train_image(file_ids[i], tif=tif, dbg=dbg))
         if verbose and i % 100 == 0:
@@ -144,14 +145,14 @@ for i in range(5):
     np.save('y.{}.npy'.format(i), y_train_i)
 
 
-# In[ ]:
+# In[28]:
+
+# x,y = get_training_data([0], tif=True)
 
 
+# In[29]:
 
-
-# In[ ]:
-
-
+# x.dtype
 
 
 # In[ ]:
