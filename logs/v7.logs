@@ -1,0 +1,152 @@
+Epoch 1/40
+2017-07-08 05:07:15.042173: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2017-07-08 05:07:15.042222: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-07-08 05:07:15.042242: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-07-08 05:07:15.042249: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-07-08 05:07:15.042256: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+2017-07-08 05:07:15.295396: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2017-07-08 05:07:15.295912: I tensorflow/core/common_runtime/gpu/gpu_device.cc:887] Found device 0 with properties:
+name: Tesla K80
+major: 3 minor: 7 memoryClockRate (GHz) 0.8235
+pciBusID 0000:00:1e.0
+Total memory: 11.17GiB
+Free memory: 11.11GiB
+2017-07-08 05:07:15.295956: I tensorflow/core/common_runtime/gpu/gpu_device.cc:908] DMA: 0
+2017-07-08 05:07:15.295964: I tensorflow/core/common_runtime/gpu/gpu_device.cc:918] 0:   Y
+2017-07-08 05:07:15.295978: I tensorflow/core/common_runtime/gpu/gpu_device.cc:977] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla K80, pci bus id: 0000:00:1e.0)
+
+   64/32383 [..............................] - ETA: 1946s - loss: 0.7869 - amazon_score: 0.4683 - acc: 0.5074
+  160/32383 [..............................] - ETA: 809s - loss: 0.7536 - amazon_score: 0.4742 - acc: 0.5386
+32352/32383 [============================>.] - ETA: 0s - loss: 0.2280 - amazon_score: 0.7582 - acc: 0.9138Epoch 00000: val_loss improved from inf to 0.16406, saving model to weights-v7.hdf5
+32383/32383 [==============================] - 59s - loss: 0.2280 - amazon_score: 0.7583 - acc: 0.9139 - val_loss: 0.1641 - val_amazon_score: 0.8303 - val_acc: 0.9344
+Epoch 2/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1736 - amazon_score: 0.8208 - acc: 0.9318Epoch 00001: val_loss improved from 0.16406 to 0.15843, saving model to weights-v7.hdf5
+32383/32383 [==============================] - 55s - loss: 0.1736 - amazon_score: 0.8208 - acc: 0.9318 - val_loss: 0.1584 - val_amazon_score: 0.8312 - val_acc: 0.9369
+Epoch 3/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1634 - amazon_score: 0.8319 - acc: 0.9365Epoch 00002: val_loss improved from 0.15843 to 0.14682, saving model to weights-v7.hdf5
+32383/32383 [==============================] - 55s - loss: 0.1634 - amazon_score: 0.8319 - acc: 0.9365 - val_loss: 0.1468 - val_amazon_score: 0.8458 - val_acc: 0.9426
+Epoch 4/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1560 - amazon_score: 0.8399 - acc: 0.9399Epoch 00003: val_loss did not improve
+32383/32383 [==============================] - 55s - loss: 0.1560 - amazon_score: 0.8399 - acc: 0.9399 - val_loss: 0.1471 - val_amazon_score: 0.8478 - val_acc: 0.9432
+Epoch 5/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1533 - amazon_score: 0.8430 - acc: 0.9415Epoch 00004: val_loss did not improve
+32383/32383 [==============================] - 55s - loss: 0.1533 - amazon_score: 0.8430 - acc: 0.9415 - val_loss: 0.1492 - val_amazon_score: 0.8415 - val_acc: 0.9427
+Epoch 6/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1497 - amazon_score: 0.8475 - acc: 0.9428Epoch 00005: val_loss improved from 0.14682 to 0.14357, saving model to weights-v7.hdf5
+32383/32383 [==============================] - 55s - loss: 0.1497 - amazon_score: 0.8474 - acc: 0.9428 - val_loss: 0.1436 - val_amazon_score: 0.8522 - val_acc: 0.9446
+Epoch 7/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1481 - amazon_score: 0.8496 - acc: 0.9439Epoch 00006: val_loss improved from 0.14357 to 0.14356, saving model to weights-v7.hdf5
+32383/32383 [==============================] - 55s - loss: 0.1481 - amazon_score: 0.8496 - acc: 0.9439 - val_loss: 0.1436 - val_amazon_score: 0.8543 - val_acc: 0.9458
+Epoch 8/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1456 - amazon_score: 0.8527 - acc: 0.9443Epoch 00007: val_loss improved from 0.14356 to 0.14069, saving model to weights-v7.hdf5
+32383/32383 [==============================] - 55s - loss: 0.1456 - amazon_score: 0.8527 - acc: 0.9443 - val_loss: 0.1407 - val_amazon_score: 0.8540 - val_acc: 0.9457
+Epoch 9/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1451 - amazon_score: 0.8532 - acc: 0.9450Epoch 00008: val_loss improved from 0.14069 to 0.13865, saving model to weights-v7.hdf5
+32383/32383 [==============================] - 55s - loss: 0.1452 - amazon_score: 0.8532 - acc: 0.9450 - val_loss: 0.1387 - val_amazon_score: 0.8580 - val_acc: 0.9461
+Epoch 10/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1427 - amazon_score: 0.8554 - acc: 0.9457Epoch 00009: val_loss improved from 0.13865 to 0.13310, saving model to weights-v7.hdf5
+32383/32383 [==============================] - 55s - loss: 0.1427 - amazon_score: 0.8554 - acc: 0.9457 - val_loss: 0.1331 - val_amazon_score: 0.8686 - val_acc: 0.9493
+Epoch 11/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1410 - amazon_score: 0.8584 - acc: 0.9465Epoch 00010: val_loss did not improve
+32383/32383 [==============================] - 55s - loss: 0.1411 - amazon_score: 0.8584 - acc: 0.9465 - val_loss: 0.1371 - val_amazon_score: 0.8624 - val_acc: 0.9480
+Epoch 12/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1399 - amazon_score: 0.8601 - acc: 0.9468Epoch 00011: val_loss did not improve
+32383/32383 [==============================] - 55s - loss: 0.1399 - amazon_score: 0.8601 - acc: 0.9468 - val_loss: 0.1344 - val_amazon_score: 0.8655 - val_acc: 0.9490
+Epoch 13/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1364 - amazon_score: 0.8642 - acc: 0.9485Epoch 00012: val_loss improved from 0.13310 to 0.12553, saving model to weights-v7.hdf5
+32383/32383 [==============================] - 55s - loss: 0.1365 - amazon_score: 0.8642 - acc: 0.9485 - val_loss: 0.1255 - val_amazon_score: 0.8746 - val_acc: 0.9523
+Epoch 14/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1361 - amazon_score: 0.8633 - acc: 0.9486Epoch 00013: val_loss did not improve
+32383/32383 [==============================] - 55s - loss: 0.1361 - amazon_score: 0.8633 - acc: 0.9486 - val_loss: 0.1318 - val_amazon_score: 0.8728 - val_acc: 0.9509
+Epoch 15/40
+32320/32383 [============================>.] - ETA: 0s - loss: 0.1344 - amazon_score: 0.8657 - acc: 0.9491Epoch 00014: val_loss did not improve
+32383/32383 [==============================] - 55s - loss: 0.1345 - amazon_score: 0.8656 - acc: 0.9491 - val_loss: 0.1296 - val_amazon_score: 0.8719 - val_acc: 0.9510
+Epoch 16/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1330 - amazon_score: 0.8666 - acc: 0.9495Epoch 00015: val_loss did not improve
+
+Epoch 00015: reducing learning rate to 0.0005000000237487257.
+32383/32383 [==============================] - 55s - loss: 0.1330 - amazon_score: 0.8666 - acc: 0.9495 - val_loss: 0.1300 - val_amazon_score: 0.8704 - val_acc: 0.9521
+Epoch 17/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1261 - amazon_score: 0.8742 - acc: 0.9523Epoch 00016: val_loss improved from 0.12553 to 0.11978, saving model to weights-v7.hdf5
+32383/32383 [==============================] - 55s - loss: 0.1261 - amazon_score: 0.8742 - acc: 0.9523 - val_loss: 0.1198 - val_amazon_score: 0.8796 - val_acc: 0.9545
+Epoch 18/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1245 - amazon_score: 0.8763 - acc: 0.9528Epoch 00017: val_loss did not improve
+32383/32383 [==============================] - 55s - loss: 0.1244 - amazon_score: 0.8763 - acc: 0.9529 - val_loss: 0.1211 - val_amazon_score: 0.8795 - val_acc: 0.9546
+Epoch 19/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1236 - amazon_score: 0.8771 - acc: 0.9530Epoch 00018: val_loss did not improve
+32383/32383 [==============================] - 55s - loss: 0.1236 - amazon_score: 0.8772 - acc: 0.9530 - val_loss: 0.1201 - val_amazon_score: 0.8817 - val_acc: 0.9547
+Epoch 20/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1229 - amazon_score: 0.8783 - acc: 0.9534Epoch 00019: val_loss improved from 0.11978 to 0.11825, saving model to weights-v7.hdf5
+32383/32383 [==============================] - 55s - loss: 0.1229 - amazon_score: 0.8783 - acc: 0.9534 - val_loss: 0.1182 - val_amazon_score: 0.8826 - val_acc: 0.9551
+Epoch 21/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1216 - amazon_score: 0.8801 - acc: 0.9540Epoch 00020: val_loss did not improve
+32383/32383 [==============================] - 55s - loss: 0.1216 - amazon_score: 0.8801 - acc: 0.9540 - val_loss: 0.1202 - val_amazon_score: 0.8807 - val_acc: 0.9542
+Epoch 22/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1213 - amazon_score: 0.8793 - acc: 0.9542Epoch 00021: val_loss did not improve
+32383/32383 [==============================] - 54s - loss: 0.1213 - amazon_score: 0.8794 - acc: 0.9542 - val_loss: 0.1244 - val_amazon_score: 0.8742 - val_acc: 0.9527
+Epoch 23/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1201 - amazon_score: 0.8810 - acc: 0.9544Epoch 00022: val_loss did not improve
+
+Epoch 00022: reducing learning rate to 0.0002500000118743628.
+32383/32383 [==============================] - 54s - loss: 0.1201 - amazon_score: 0.8810 - acc: 0.9544 - val_loss: 0.1219 - val_amazon_score: 0.8774 - val_acc: 0.9537
+Epoch 24/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1162 - amazon_score: 0.8853 - acc: 0.9558Epoch 00023: val_loss improved from 0.11825 to 0.11755, saving model to weights-v7.hdf5
+32383/32383 [==============================] - 55s - loss: 0.1162 - amazon_score: 0.8854 - acc: 0.9558 - val_loss: 0.1176 - val_amazon_score: 0.8836 - val_acc: 0.9553
+Epoch 25/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1145 - amazon_score: 0.8864 - acc: 0.9567Epoch 00024: val_loss improved from 0.11755 to 0.11743, saving model to weights-v7.hdf5
+32383/32383 [==============================] - 55s - loss: 0.1144 - amazon_score: 0.8864 - acc: 0.9567 - val_loss: 0.1174 - val_amazon_score: 0.8843 - val_acc: 0.9557
+Epoch 26/40
+32320/32383 [============================>.] - ETA: 0s - loss: 0.1146 - amazon_score: 0.8863 - acc: 0.9564Epoch 00025: val_loss did not improve
+32383/32383 [==============================] - 55s - loss: 0.1146 - amazon_score: 0.8864 - acc: 0.9564 - val_loss: 0.1208 - val_amazon_score: 0.8801 - val_acc: 0.9551
+Epoch 27/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1139 - amazon_score: 0.8872 - acc: 0.9570Epoch 00026: val_loss did not improve
+32383/32383 [==============================] - 55s - loss: 0.1138 - amazon_score: 0.8872 - acc: 0.9570 - val_loss: 0.1178 - val_amazon_score: 0.8842 - val_acc: 0.9555
+Epoch 28/40
+32320/32383 [============================>.] - ETA: 0s - loss: 0.1137 - amazon_score: 0.8877 - acc: 0.9563Epoch 00027: val_loss did not improve
+
+Epoch 00027: reducing learning rate to 0.0001250000059371814.
+32383/32383 [==============================] - 55s - loss: 0.1138 - amazon_score: 0.8877 - acc: 0.9563 - val_loss: 0.1210 - val_amazon_score: 0.8815 - val_acc: 0.9552
+Epoch 29/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1109 - amazon_score: 0.8906 - acc: 0.9577Epoch 00028: val_loss did not improve
+32383/32383 [==============================] - 55s - loss: 0.1109 - amazon_score: 0.8905 - acc: 0.9577 - val_loss: 0.1186 - val_amazon_score: 0.8828 - val_acc: 0.9551
+Epoch 30/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1108 - amazon_score: 0.8910 - acc: 0.9579Epoch 00029: val_loss did not improve
+
+Epoch 00029: reducing learning rate to 6.25000029685907e-05.
+32383/32383 [==============================] - 55s - loss: 0.1108 - amazon_score: 0.8910 - acc: 0.9579 - val_loss: 0.1179 - val_amazon_score: 0.8841 - val_acc: 0.9555
+Epoch 31/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1095 - amazon_score: 0.8925 - acc: 0.9583Epoch 00030: val_loss improved from 0.11743 to 0.11657, saving model to weights-v7.hdf5
+32383/32383 [==============================] - 55s - loss: 0.1095 - amazon_score: 0.8925 - acc: 0.9583 - val_loss: 0.1166 - val_amazon_score: 0.8855 - val_acc: 0.9560
+Epoch 32/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1092 - amazon_score: 0.8916 - acc: 0.9584Epoch 00031: val_loss did not improve
+32383/32383 [==============================] - 55s - loss: 0.1092 - amazon_score: 0.8916 - acc: 0.9584 - val_loss: 0.1167 - val_amazon_score: 0.8844 - val_acc: 0.9555
+Epoch 33/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1081 - amazon_score: 0.8931 - acc: 0.9588Epoch 00032: val_loss improved from 0.11657 to 0.11462, saving model to weights-v7.hdf5
+32383/32383 [==============================] - 55s - loss: 0.1080 - amazon_score: 0.8931 - acc: 0.9588 - val_loss: 0.1146 - val_amazon_score: 0.8868 - val_acc: 0.9563
+Epoch 34/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1079 - amazon_score: 0.8933 - acc: 0.9589Epoch 00033: val_loss did not improve
+32383/32383 [==============================] - 55s - loss: 0.1079 - amazon_score: 0.8933 - acc: 0.9589 - val_loss: 0.1162 - val_amazon_score: 0.8854 - val_acc: 0.9562
+Epoch 35/40
+32320/32383 [============================>.] - ETA: 0s - loss: 0.1083 - amazon_score: 0.8932 - acc: 0.9586Epoch 00034: val_loss did not improve
+32383/32383 [==============================] - 55s - loss: 0.1082 - amazon_score: 0.8932 - acc: 0.9586 - val_loss: 0.1148 - val_amazon_score: 0.8864 - val_acc: 0.9561
+Epoch 36/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1081 - amazon_score: 0.8932 - acc: 0.9589Epoch 00035: val_loss did not improve
+
+Epoch 00035: reducing learning rate to 3.125000148429535e-05.
+32383/32383 [==============================] - 55s - loss: 0.1081 - amazon_score: 0.8932 - acc: 0.9589 - val_loss: 0.1156 - val_amazon_score: 0.8854 - val_acc: 0.9562
+Epoch 37/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1071 - amazon_score: 0.8943 - acc: 0.9591Epoch 00036: val_loss did not improve
+32383/32383 [==============================] - 55s - loss: 0.1071 - amazon_score: 0.8943 - acc: 0.9591 - val_loss: 0.1148 - val_amazon_score: 0.8863 - val_acc: 0.9562
+Epoch 38/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1070 - amazon_score: 0.8958 - acc: 0.9593Epoch 00037: val_loss did not improve
+
+Epoch 00037: reducing learning rate to 1.5625000742147677e-05.
+32383/32383 [==============================] - 55s - loss: 0.1069 - amazon_score: 0.8958 - acc: 0.9593 - val_loss: 0.1160 - val_amazon_score: 0.8853 - val_acc: 0.9562
+Epoch 39/40
+32352/32383 [============================>.] - ETA: 0s - loss: 0.1063 - amazon_score: 0.8948 - acc: 0.9597Epoch 00038: val_loss did not improve
+32383/32383 [==============================] - 55s - loss: 0.1063 - amazon_score: 0.8948 - acc: 0.9597 - val_loss: 0.1163 - val_amazon_score: 0.8855 - val_acc: 0.9559
+Epoch 40/40
+32320/32383 [============================>.] - ETA: 0s - loss: 0.1071 - amazon_score: 0.8945 - acc: 0.9592Epoch 00039: val_loss did not improve
+
+Epoch 00039: reducing learning rate to 7.812500371073838e-06.
+32383/32383 [==============================] - 55s - loss: 0.1071 - amazon_score: 0.8945 - acc: 0.9593 - val_loss: 0.1164 - val_amazon_score: 0.8852 - val_acc: 0.9561
