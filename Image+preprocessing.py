@@ -143,6 +143,7 @@ for i in range(5):
     X_train_i, y_train_i = get_training_data(file_ids, tif = True, verbose = True)
     np.save('X.{}.npy'.format(i), X_train_i)
     np.save('y.{}.npy'.format(i), y_train_i)
+    gc.collect()
 
 
 # In[28]:
