@@ -256,6 +256,7 @@ class Data:
             else:
                 self.X[i], self.y[i] = get_training_data(
                     [x for x in range(N_TRAIN) if x % 5 == i], tif=tif, verbose=True)
+                gc.collect()
             print('Loaded fold {}.'.format(i))
 
     def gen_train(self, batch_size, val=0):
