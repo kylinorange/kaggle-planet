@@ -25,11 +25,13 @@ from skimage.transform import rescale, resize, downscale_local_mean
 
 # In[25]:
 
-# PLANET_KAGGLE_ROOT = '/Users/jiayou/Documents/Kaggle Data/Amazon'
 PLANET_KAGGLE_ROOT = '/data/planet-data/'
+if not os.path.exists(PLANET_KAGGLE_ROOT):
+    PLANET_KAGGLE_ROOT = '/Users/jiayou/Documents/Kaggle Data/Amazon'
 
 N_TAGS = 17
 N_TRAIN = 40479
+N_TRAIN = 10
 N_USE = 32000
 # N_USE = 20
 N_TEST_T = 40669

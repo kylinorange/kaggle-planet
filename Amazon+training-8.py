@@ -313,8 +313,8 @@ def ResNet50(include_top=True, weights='imagenet',
 # In[171]:
 
 # print_function for compatibility with Python 3
-from __future__ import print_function
-print('print function is ready to serve')
+# from __future__ import print_function
+# print('print function is ready to serve')
 
 # NumPy for numerical computing
 import numpy as np
@@ -358,6 +358,7 @@ if not os.path.exists(PLANET_KAGGLE_ROOT):
 
 N_TAGS = 17
 N_TRAIN = 40479
+# N_TRAIN = 10
 N_USE = 32000
 # N_USE = 20
 N_TEST_T = 40669
@@ -400,12 +401,12 @@ def load_test_image(n):
     # if you reach this line, you didn't find the image you're looking for
     print('Load failed: could not find image {}'.format(path))
 
-    
+
 calib_params = np.array(
     [[ 4953.06200497,  4238.24180873,  3039.04404623,  6387.04264221],
      [ 1692.87422811,  1528.24629706,  1576.04566834,  1804.99976545]]
 )
-    
+
 def preprocess_image(img):
     img = img.astype('float16')
 #     img = downscale_local_mean(img, (4, 4, 1))
@@ -417,7 +418,7 @@ def preprocess_image(img):
         # tif
         for i in range(4):
             img[:,:,i] = (img[:,:,i] - calib_params[0,i]) / 1500
-        
+
     return img
 
 
@@ -474,7 +475,7 @@ def pred_to_tags(y):
 
 def output(pred):
     result = pd.DataFrame({
-        'image_name': 
+        'image_name':
             ['test_{}'.format(i) for i in range(N_TEST_T)] + ['file_{}'.format(i) for i in range(N_TEST_F)],
         'tags': ['' for i in range(N_TEST)]
     })
@@ -492,14 +493,14 @@ label_idx
 def get_training_data(file_ids, tif=False, dbg=False, verbose=False):
     if verbose:
         print('Getting {} training images...'.format(len(file_ids)))
-    X_train = np.zeros((len(file_ids), 64, 64, 4 if tif else 3))
+    X_train = np.zeros((len(file_ids), 256, 256, 4 if tif else 3))
     for i in range(len(file_ids)):
         X_train[i,:,:,:] = preprocess_image(load_train_image(file_ids[i], tif=tif, dbg=dbg))
         if verbose and i % 100 == 0:
             print('Got {} images'.format(i+1))
     if verbose:
         print('Done')
-    
+
     y_train = np.array([[0. for i in range(N_TAGS)] for j in file_ids])
     for i in range(len(file_ids)):
         tags = train_labels.tags[file_ids[i]]
@@ -511,7 +512,7 @@ def get_training_data(file_ids, tif=False, dbg=False, verbose=False):
             y_train[i][label_map[tag]] = 1.
     if dbg:
         print(y_train)
-    
+
     return (X_train, y_train)
 
 def get_test_data(file_ids):
@@ -535,7 +536,7 @@ def gen_validation_data(batch_size):
         file_ids = (np.random.randint(0, int(N_TRAIN / 5), size=batch_size) * 5).tolist()
         file_ids.sort()
         yield get_training_data(file_ids)
-        
+
 def gen_test_data(batch_size):
     start = 0
     while start < N_TEST:
@@ -552,30 +553,30 @@ class Data:
         self.X = [0] * 5
         self.y = [0] * 5
         for i in range(5):
-            self.X[i] = np.load('X.{}.npy'.format(i))
+            self.X[i] = np.load('X.{}.npy'.format(i)) + 1
             self.y[i] = np.load('y.{}.npy'.format(i))
             print('Loaded fold {}.'.format(i))
-            
+
     def gen_train(self, batch_size, val=0):
         while 1:
             f = val
             while f == val:
                 f = random.randint(0, 4)
             yield self.data_from_fold(f, batch_size)
-    
+
     def gen_val(self, batch_size, val=0):
         f = val
         while 1:
             ids = np.random.randint(0, len(self.y[f]), size=batch_size).tolist()
             ids.sort()
             yield (self.X[f][ids,:,:,:], self.y[f][ids,:])
-    
+
     def data_from_fold(self, f, batch_size):
         ids = np.random.randint(0, len(self.y[f]), size=batch_size).tolist()
         ids.sort()
         X = np.zeros((len(ids), 256, 256, 4))
         for i in range(len(ids)):
-            X[i,:,:,:] = augment(self.X[f][i,:,:,:].reshape((256, 256, 4))).reshape((1, 256, 256, 4))
+            X[i,:,:,:] = augment(self.X[f][ids[i],:,:,:].reshape((256, 256, 4))).reshape((1, 256, 256, 4))
         return (X, self.y[f][ids,:])
 
 
@@ -616,19 +617,19 @@ def augment(im, orient = None):
 def amazon_score(y_true, y_pred):
     y_true = y_true > 0.2
     y_pred = y_pred > 0.2
-    
+
     y_tp = tf.logical_and(y_true, y_pred)
     y_fn = tf.logical_and(y_true, tf.logical_not(y_pred))
     y_fp = tf.logical_and(tf.logical_not(y_true), y_pred)
-    
+
     tp = tf.reduce_sum(tf.to_float(y_tp))
     fn = tf.reduce_sum(tf.to_float(y_fn))
     fp = tf.reduce_sum(tf.to_float(y_fp))
-    
+
     p = tf.where(tp + fp > 0, tp / (tp + fp), 0)
     r = tf.where(tp + fn > 0, tp / (tp + fn), 1)
     s = tf.where(p + r > 0, 5 * p * r / (4 * p + r), 0)
-    
+
     return s
 
 
@@ -636,7 +637,7 @@ def amazon_score(y_true, y_pred):
 
 def new_model():
     model = Sequential()
-    model.add(BatchNormalization(input_shape=(64, 64, 4)))
+    model.add(BatchNormalization(input_shape=(256, 256, 4)))
 
     model.add(Conv2D(32, (3, 3), padding='same', activation='relu'))
     model.add(Conv2D(32, (3, 3), activation='relu'))
@@ -657,7 +658,7 @@ def new_model():
     model.add(Conv2D(256, (3, 3), activation='relu'))
     model.add(MaxPooling2D(pool_size=2))
     model.add(Dropout(0.25))
-    
+
     model.add(Flatten())
     model.add(Dense(512, activation='relu'))
     model.add(BatchNormalization())
@@ -684,7 +685,7 @@ import numpy as np
 
 def new_resnet50():
     base_model = ResNet50(weights=None, include_top=False, pooling='avg', input_tensor = Input(shape=(256, 256, 4)))
-    
+
     x = base_model.output
     predictions = Dense(17, activation='sigmoid')(x)
 
@@ -694,7 +695,7 @@ def new_resnet50():
     # first: train only the top layers (which were randomly initialized)
 #     for layer in base_model.layers:
 #         layer.trainable = False
-        
+
 #     for layer in model.layers[-24:]:
 #         layer.trainable = True
 
@@ -709,7 +710,7 @@ def new_resnet50():
 def predict(model_path):
     model = load_model(model_path)
     print('Model weights loaded')
-    
+
     pred = None
     cnt = 0
     print('Start predicting..')
@@ -722,11 +723,11 @@ def predict(model_path):
         cnt += len(y_test)
         print('Predicted {} images'.format(cnt))
     print('Predicted all {} images'.format(cnt))
-            
+
     print('Saving raw predictions...')
     np.save('raw_pred.npy', pred)
     print('Saved')
-    
+
     result = output(pred)
     print('Saving submission file...')
     result.to_csv('submission.csv', index = None)
@@ -748,11 +749,11 @@ def predict(model_path):
 #         else:
 #             X_val = np.load('X.{}.npy'.format(j))
 #             y_val = np.load('y.{}.npy'.format(j))
-                                
+
 #     X_train = np.concatenate(tuple(X_train_data), axis = 0)
 #     y_train = np.concatenate(tuple(y_train_data), axis = 0)
 #     return X_train, y_train
-    
+
 
 
 # In[191]:
@@ -760,12 +761,12 @@ def predict(model_path):
 def train_from_raw():
     X_train, y_train = get_training_data([x for x in range(N_TRAIN) if x % 5 != 0], tif=True, verbose=True)
     gc.collect()
-    
+
     X_val, y_val = get_training_data([x for x in range(N_TRAIN) if x % 5 == 0], tif=True, verbose=True)
     gc.collect()
-    
+
     model = new_model()
-    
+
     h = model.fit(
         X_train, y_train, batch_size=32, verbose=1,
         validation_data=(X_val, y_val),
@@ -781,19 +782,28 @@ def train_from_raw():
 
 def train():
     d = Data()
-    
+
     m = new_resnet50()
-    
-    h = model.fit_generator(
-        d.gen_train(32), steps_per_epoch=1000, 
+    # m = new_model()
+
+    h = m.fit_generator(
+        d.gen_train(32), steps_per_epoch=8000,
         epochs=40, initial_epoch=0,
         validation_data=d.gen_val(100), validation_steps=80,
         callbacks=[
             ModelCheckpoint(
                 'weights-v8.hdf5',
                 save_best_only=True, verbose=1),
-            ReduceLROnPlateau(monitor='val_loss', factor=0.5, patience=2, min_lr=0.000001, verbose=1)],
+            ReduceLROnPlateau(monitor='val_loss', factor=0.2, patience=2, min_lr=0, verbose=1)],
         max_q_size=10)
+
+    # h = m.fit_generator(
+    #     gen_training_data(1), steps_per_epoch=8,
+    #     epochs=40, initial_epoch=0,
+    #     # validation_data=d.gen_val(10), validation_steps=1,
+    #     callbacks=[
+    #         ReduceLROnPlateau(monitor='loss', factor=0.2, patience=2, min_lr=0, verbose=1)],
+    #     max_q_size=10)
     return h
 
 
@@ -812,7 +822,7 @@ train()
 # In[16]:
 
 # h = model.fit_generator(
-#         gen_training_data(30), steps_per_epoch=1000, 
+#         gen_training_data(30), steps_per_epoch=1000,
 #         epochs=30, initial_epoch=0,
 #         validation_data=gen_validation_data(100), validation_steps=80,
 #         callbacks=[
