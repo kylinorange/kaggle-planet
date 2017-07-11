@@ -31,7 +31,7 @@ if not os.path.exists(PLANET_KAGGLE_ROOT):
 
 N_TAGS = 17
 N_TRAIN = 40479
-N_TRAIN = 10
+# N_TRAIN = 10
 N_USE = 32000
 # N_USE = 20
 N_TEST_T = 40669
@@ -71,12 +71,12 @@ def load_test_image(n):
     # if you reach this line, you didn't find the image you're looking for
     print('Load failed: could not find image {}'.format(path))
 
-    
+
 calib_params = np.array(
     [[ 4953.06200497,  4238.24180873,  3039.04404623,  6387.04264221],
      [ 1692.87422811,  1528.24629706,  1576.04566834,  1804.99976545]]
 )
-    
+
 def preprocess_image(img):
     img = img.astype('float16')
 #     img = downscale_local_mean(img, (4, 4, 1))
@@ -88,7 +88,7 @@ def preprocess_image(img):
         # tif
         for i in range(4):
             img[:,:,i] = (img[:,:,i] - calib_params[0,i]) / 1500
-        
+
     return img
 
 
@@ -114,7 +114,7 @@ label_idx = {v: k for k, v in label_map.items()}
 def get_training_data(file_ids, tif=False, dbg=False, verbose=False):
     if verbose:
         print('Getting {} training images...'.format(len(file_ids)))
-    X_train = np.zeros((len(file_ids), 256, 256, 4 if tif else 3))
+    X_train = np.zeros((len(file_ids), 256, 256, 4 if tif else 3)).astype('float16')
     X_train = X_train.astype('float16')
     for i in range(len(file_ids)):
         X_train[i,:,:,:] = preprocess_image(load_train_image(file_ids[i], tif=tif, dbg=dbg))
@@ -122,7 +122,7 @@ def get_training_data(file_ids, tif=False, dbg=False, verbose=False):
             print('Got {} images'.format(i+1))
     if verbose:
         print('Done')
-    
+
     y_train = np.array([[0. for i in range(N_TAGS)] for j in file_ids])
     for i in range(len(file_ids)):
         tags = train_labels.tags[file_ids[i]]
@@ -134,7 +134,7 @@ def get_training_data(file_ids, tif=False, dbg=False, verbose=False):
             y_train[i][label_map[tag]] = 1.
     if dbg:
         print(y_train)
-    
+
     return (X_train, y_train)
 
 

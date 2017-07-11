@@ -189,7 +189,7 @@ label_idx
 def get_training_data(file_ids, tif=False, dbg=False, verbose=False):
     if verbose:
         print('Getting {} training images...'.format(len(file_ids)))
-    X_train = np.zeros((len(file_ids), 256, 256, 4 if tif else 3))
+    X_train = np.zeros((len(file_ids), 256, 256, 4 if tif else 3)).astype('float16')
     for i in range(len(file_ids)):
         X_train[i,:,:,:] = preprocess_image(load_train_image(file_ids[i], tif=tif, dbg=dbg))
         if verbose and i % 100 == 0:
