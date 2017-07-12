@@ -105,9 +105,9 @@ def augment(im, orient = None):
 
 class Data:
     def __init__(self, tif=False, toy=None, train=True):
-        N_TRAIN = N_TRAIN
+        n = N_TRAIN
         if toy is not None:
-            N_TRAIN = toy
+            n = toy
 
         self.c = 4 if tif else 3
 
@@ -123,7 +123,7 @@ class Data:
                 self.y[i] = np.load('y.{}.npy'.format(i))
             else:
                 self.X[i], self.y[i] = get_training_data(
-                    [x for x in range(N_TRAIN) if x % 5 == i], tif=tif, verbose=True)
+                    [x for x in range(n) if x % 5 == i], tif=tif, verbose=True)
             print('Loaded fold {}.'.format(i))
 
     def gen_train(self, batch_size, val=0):
