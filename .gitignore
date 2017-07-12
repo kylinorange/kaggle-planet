@@ -3,3 +3,4 @@
 .ipynb_checkpoints/
 *.npy
 *.pyc
+*.hdf5
