@@ -105,6 +105,7 @@ def augment(im, orient = None):
 
 class Data:
     def __init__(self, tif=False, toy=None, train=True):
+        N_TRAIN = N_TRAIN
         if toy is not None:
             N_TRAIN = toy
 
