@@ -37,7 +37,7 @@ def amazon_score(y_true, y_pred):
 
 class Models:
     @staticmethod
-    def new_resnet50(input_shape=(256, 256, 4)):
+    def new_resnet50(input_shape=(256, 256, 3)):
         base_model = ResNet50(weights=None, include_top=False, pooling='avg', input_tensor = Input(shape=input_shape))
 
         x = base_model.output
@@ -60,7 +60,7 @@ class Models:
 
     @staticmethod
     def load_resnet50(path):
-        model = new_resnet50()
+        model = Models.new_resnet50()
         model.load_weights(path)
         return model
 

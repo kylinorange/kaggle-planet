@@ -449,7 +449,7 @@ def train():
     # m = new_model()
 
     h = m.fit_generator(
-        d.gen_train(32), steps_per_epoch=8000,
+        d.gen_train(32), steps_per_epoch=1000,
         epochs=40, initial_epoch=0,
         validation_data=d.gen_val(100), validation_steps=80,
         callbacks=[
