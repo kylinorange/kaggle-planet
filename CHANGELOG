@@ -1,0 +1,11 @@
+v9 - resnet50 + jpg + data augment
+
+v8 - resnet50 + tif + data augment
+
+v7 - 64 tif, in-mem-data 55s epoch, alex
+
+v6 - resnet50, jpg - overfit
+
+v5 - 5 fold, 64*64 jpg, alex
+
+v4 - 256 jpg, alex - saturated
