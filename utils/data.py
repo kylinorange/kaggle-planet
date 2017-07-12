@@ -92,16 +92,22 @@ def get_test_data(file_ids):
     return X_train
 
 def augment(im, orient = None):
+    shape = im.shape
+    if len(shape) == 4:
+        im = im.reshape((shape[1], shape[2], shape[3]))
+
     if orient is None:
         mirror = random.randint(0, 1)
         rotate = random.randint(0, 3)
     else:
-        mirror = orient[0]
-        rotate = orient[1]
+        mirror = orient % 2
+        rotate = int(orient / 2)
+
     im = np.rot90(im, rotate, (0, 1))
     if mirror:
         im = np.flip(im, 1)
-    return im
+
+    return im.reshape(shape)
 
 class Data:
     def __init__(self, tif=False, toy=None, train=[0,1,2,3,4]):
@@ -122,6 +128,7 @@ class Data:
                 self.X[i], self.y[i] = get_training_data(
                     [x for x in range(n) if x % 5 == i], tif=tif, verbose=True)
             print('Loaded fold {}.'.format(i))
+        print('Loading done')
 
     def gen_train(self, batch_size, val=0):
         while 1:
@@ -144,12 +151,29 @@ class Data:
             yield get_test_data(range(start, end))
             start = end
 
+    def gen_test_augmented(self, batch_size):
+        start = 0
+        while start < N_TEST:
+            end = min(start + batch_size, N_TEST)
+
+            original = get_test_data(range(start, end))
+            shape = list(original.shape)
+            shape[0] *= 8
+            shape = tuple(shape)
+            aug = np.zeros(shape)
+            for i in range(batch_size):
+                for orient in range(8):
+                    aug[8 * i + orient,:,:,:] = augment(original[i,:,:,:], orient=orient)
+            yield aug
+
+            start = end
+
     def data_from_fold(self, f, batch_size):
         ids = np.random.randint(0, len(self.y[f]), size=batch_size).tolist()
         ids.sort()
         X = np.zeros((len(ids), 256, 256, self.c))
         for i in range(len(ids)):
-            X[i,:,:,:] = augment(self.X[f][ids[i],:,:,:].reshape((256, 256, self.c))).reshape((1, 256, 256, self.c))
+            X[i,:,:,:] = augment(self.X[f][ids[i],:,:,:])
         return (X, self.y[f][ids,:])
 
     def get_fold(self, f=0):
