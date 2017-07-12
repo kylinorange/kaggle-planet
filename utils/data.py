@@ -104,20 +104,17 @@ def augment(im, orient = None):
     return im
 
 class Data:
-    def __init__(self, tif=False, toy=None, train=True):
+    def __init__(self, tif=False, toy=None, train=[0,1,2,3,4]):
         n = N_TRAIN
         if toy is not None:
             n = toy
 
         self.c = 4 if tif else 3
 
-        if not train:
-            return
-
         print('Loading data...')
         self.X = [0] * 5
         self.y = [0] * 5
-        for i in range(5):
+        for i in train:
             if tif:
                 self.X[i] = np.load('X.{}.npy'.format(i))
                 self.y[i] = np.load('y.{}.npy'.format(i))
