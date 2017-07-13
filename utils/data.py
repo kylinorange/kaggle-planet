@@ -144,24 +144,28 @@ class Data:
             ids.sort()
             yield (self.X[f][ids,:,:,:], self.y[f][ids,:])
 
-    def gen_test(self, batch_size):
+    def gen_test(self, batch_size, n=None):
+        if n is None:
+            n = N_TEST
         start = 0
-        while start < N_TEST:
-            end = min(start + batch_size, N_TEST)
+        while start < n:
+            end = min(start + batch_size, n)
             yield get_test_data(range(start, end))
             start = end
 
-    def gen_test_augmented(self, batch_size):
+    def gen_test_augmented(self, batch_size, n=None):
+        if n is None:
+            n = N_TEST
         start = 0
-        while start < N_TEST:
-            end = min(start + batch_size, N_TEST)
+        while start < n:
+            end = min(start + batch_size, n)
 
             original = get_test_data(range(start, end))
             shape = list(original.shape)
             shape[0] *= 8
             shape = tuple(shape)
             aug = np.zeros(shape)
-            for i in range(batch_size):
+            for i in range(end - start):
                 for orient in range(8):
                     aug[8 * i + orient,:,:,:] = augment(original[i,:,:,:], orient=orient)
             yield aug
