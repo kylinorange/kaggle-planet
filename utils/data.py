@@ -114,6 +114,7 @@ class Data:
         n = N_TRAIN
         if toy is not None:
             n = toy
+        self.n_train = n
 
         self.c = 4 if tif else 3
 
@@ -143,6 +144,26 @@ class Data:
             ids = np.random.randint(0, len(self.y[f]), size=batch_size).tolist()
             ids.sort()
             yield (self.X[f][ids,:,:,:], self.y[f][ids,:])
+
+    def gen_train_augmented(self, batch_size):
+        n = self.n_train
+        start = 0
+        while start < n:
+            end = min(start + batch_size, n)
+
+            shape = list(self.X[0].shape)
+            shape[0] = 8 * (end - start)
+            shape = tuple(shape)
+            aug = np.zeros(shape)
+            for i in range(end - start):
+                cur = start + i
+                f = cur % 5
+                k = int(cur / 5 + 1e-3)
+                for orient in range(8):
+                    aug[8 * i + orient,:,:,:] = augment(self.X[f][k,:,:,:], orient=orient)
+            yield aug
+
+            start = end
 
     def gen_test(self, batch_size, n=None):
         if n is None:
