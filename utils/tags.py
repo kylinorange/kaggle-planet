@@ -8,6 +8,10 @@ np.random.seed(123)
 import random
 random.seed(123)
 
+from sklearn.metrics import roc_curve, auc
+
+from matplotlib import pyplot as plt
+
 import os
 
 PLANET_KAGGLE_ROOT = '/data/planet-data/'
@@ -86,4 +90,25 @@ class Tags:
                     tags.append(tag)
     #     tags.append(label_idx[w])
         return ' '.join(tags)
+
+    def plot_roc(self, pred, true, title='Receiver Operating Characteristic'):
+        fig = plt.figure(figsize=(15,15))
+        plt.title(title)
+
+        for i in range(N_TAGS):
+            # Plot ROC curve
+            fpr, tpr, thresholds = roc_curve(true[:,i], pred[:,i])
+            area = auc(fpr, tpr)
+            plt.plot(fpr, tpr, label='{} ({:.4f})'.format(self.idx_to_tag(i), area), ls=[ '-' , '--' , '-.' , ':'][random.randint(0, 3)])
+
+        # Diagonal 45 degree line
+        plt.plot([0,1],[0,1],'k--')
+
+        # Axes limits and labels
+        plt.xlim([-0.1,1.1])
+        plt.ylim([-0.1,1.1])
+        plt.ylabel('True Positive Rate')
+        plt.xlabel('False Positive Rate')
+        plt.legend(loc='lower right')
+        plt.show()
 

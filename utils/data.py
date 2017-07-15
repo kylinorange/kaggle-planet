@@ -165,6 +165,25 @@ class Data:
 
             start = end
 
+    def gen_val_augmented(self, batch_size, val=0):
+        f = val
+        n = len(self.y[f])
+        start = 0
+        while start < n:
+            end = min(start + batch_size, n)
+
+            shape = list(self.X[f].shape)
+            shape[0] = 8 * (end - start)
+            shape = tuple(shape)
+            aug = np.zeros(shape)
+            for i in range(end - start):
+                cur = start + i
+                for orient in range(8):
+                    aug[8 * i + orient,:,:,:] = augment(self.X[f][cur,:,:,:], orient=orient)
+            yield aug
+
+            start = end
+
     def gen_test(self, batch_size, n=None):
         if n is None:
             n = N_TEST
@@ -203,6 +222,16 @@ class Data:
 
     def get_fold(self, f=0):
         return (self.X[f], self.y[f])
+
+    def consolidate(self, pred):
+        return pred.mean(axis=0)
+
+    def gen_mask(self, g, select):
+        for x, y in g:
+            for i in range(N_TAGS):
+                if not i in select:
+                    y[:,i] = 0
+            yield (x, y)
 
 
 

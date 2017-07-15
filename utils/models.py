@@ -59,8 +59,8 @@ class Models:
         return model
 
     @staticmethod
-    def load_resnet50(path):
-        model = Models.new_resnet50()
+    def load_resnet50(path, input_shape=(256, 256, 3)):
+        model = Models.new_resnet50(input_shape)
         model.load_weights(path)
         return model
 
