@@ -131,6 +131,8 @@ class Data:
             print('Loaded fold {}.'.format(i))
         print('Loading done')
 
+    # randomly generate randomly-augmented training data
+    # output shape: (batch_size, 256, 256, 3)
     def gen_train(self, batch_size, val=0):
         while 1:
             f = val
@@ -138,6 +140,8 @@ class Data:
                 f = random.randint(0, 4)
             yield self.data_from_fold(f, batch_size)
 
+    # randomly generate validation data
+    # output shape: (batch_size, 256, 256, 3)
     def gen_val(self, batch_size, val=0):
         f = val
         while 1:
@@ -145,6 +149,8 @@ class Data:
             ids.sort()
             yield (self.X[f][ids,:,:,:], self.y[f][ids,:])
 
+    # generate augmented training data in order
+    # output shape: (batch_size * 8, 256, 256, 3)
     def gen_train_augmented(self, batch_size):
         n = self.n_train
         start = 0
@@ -165,6 +171,8 @@ class Data:
 
             start = end
 
+    # generate augmented validation data in order
+    # output shape: (batch_size * 8, 256, 256, 3)
     def gen_val_augmented(self, batch_size, val=0):
         f = val
         n = len(self.y[f])
@@ -184,6 +192,7 @@ class Data:
 
             start = end
 
+    # generate test data in order
     def gen_test(self, batch_size, n=None):
         if n is None:
             n = N_TEST
@@ -193,6 +202,7 @@ class Data:
             yield get_test_data(range(start, end))
             start = end
 
+    # generate augmented test data in order
     def gen_test_augmented(self, batch_size, n=None):
         if n is None:
             n = N_TEST
@@ -212,6 +222,7 @@ class Data:
 
             start = end
 
+    # return $batch_size randomly-augmented images from a fold
     def data_from_fold(self, f, batch_size):
         ids = np.random.randint(0, len(self.y[f]), size=batch_size).tolist()
         ids.sort()
