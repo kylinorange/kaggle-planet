@@ -1,102 +1,138 @@
+
 Epoch 1/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.1829 - amazon_score: 0.8096 - acc: 0.9284Epoch 00000: val_loss improved from inf to 0.15350, saving model to weights-v11-f4.hdf5
 1000/1000 [==============================] - 1241s - loss: 0.1829 - amazon_score: 0.8097 - acc: 0.9284 - val_loss: 0.1535 - val_amazon_score: 0.8375 - val_acc: 0.9402
+
 Epoch 2/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.1531 - amazon_score: 0.8432 - acc: 0.9391Epoch 00001: val_loss did not improve
 1000/1000 [==============================] - 1181s - loss: 0.1531 - amazon_score: 0.8432 - acc: 0.9391 - val_loss: 0.2049 - val_amazon_score: 0.7898 - val_acc: 0.9248
+
 Epoch 3/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.1447 - amazon_score: 0.8520 - acc: 0.9424Epoch 00002: val_loss did not improve
 
+
 Epoch 00002: reducing learning rate to 0.00020000000949949026.
 1000/1000 [==============================] - 1179s - loss: 0.1447 - amazon_score: 0.8520 - acc: 0.9424 - val_loss: 0.1744 - val_amazon_score: 0.8304 - val_acc: 0.9373
+
 Epoch 4/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.1260 - amazon_score: 0.8724 - acc: 0.9493Epoch 00003: val_loss improved from 0.15350 to 0.11665, saving model to weights-v11-f4.hdf5
 1000/1000 [==============================] - 1186s - loss: 0.1260 - amazon_score: 0.8724 - acc: 0.9493 - val_loss: 0.1167 - val_amazon_score: 0.8774 - val_acc: 0.9530
+
 Epoch 5/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.1202 - amazon_score: 0.8789 - acc: 0.9523Epoch 00004: val_loss improved from 0.11665 to 0.11116, saving model to weights-v11-f4.hdf5
 1000/1000 [==============================] - 1181s - loss: 0.1202 - amazon_score: 0.8789 - acc: 0.9523 - val_loss: 0.1112 - val_amazon_score: 0.8863 - val_acc: 0.9560
+
 Epoch 6/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.1148 - amazon_score: 0.8843 - acc: 0.9548Epoch 00005: val_loss improved from 0.11116 to 0.10919, saving model to weights-v11-f4.hdf5
 1000/1000 [==============================] - 1185s - loss: 0.1148 - amazon_score: 0.8843 - acc: 0.9547 - val_loss: 0.1092 - val_amazon_score: 0.8868 - val_acc: 0.9559
+
 Epoch 7/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.1120 - amazon_score: 0.8887 - acc: 0.9556Epoch 00006: val_loss improved from 0.10919 to 0.10688, saving model to weights-v11-f4.hdf5
 1000/1000 [==============================] - 1179s - loss: 0.1120 - amazon_score: 0.8887 - acc: 0.9556 - val_loss: 0.1069 - val_amazon_score: 0.8901 - val_acc: 0.9579
+
 Epoch 8/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.1102 - amazon_score: 0.8893 - acc: 0.9566Epoch 00007: val_loss did not improve
 1000/1000 [==============================] - 1182s - loss: 0.1102 - amazon_score: 0.8893 - acc: 0.9566 - val_loss: 0.1079 - val_amazon_score: 0.8921 - val_acc: 0.9579
+
 Epoch 9/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.1066 - amazon_score: 0.8947 - acc: 0.9583Epoch 00008: val_loss did not improve
 
+
 Epoch 00008: reducing learning rate to 4.0000001899898055e-05.
 1000/1000 [==============================] - 1182s - loss: 0.1066 - amazon_score: 0.8947 - acc: 0.9583 - val_loss: 0.1069 - val_amazon_score: 0.8910 - val_acc: 0.9574
+
 Epoch 10/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.0993 - amazon_score: 0.9013 - acc: 0.9607Epoch 00009: val_loss improved from 0.10688 to 0.09541, saving model to weights-v11-f4.hdf5
 1000/1000 [==============================] - 1180s - loss: 0.0993 - amazon_score: 0.9013 - acc: 0.9607 - val_loss: 0.0954 - val_amazon_score: 0.9032 - val_acc: 0.9616
+
 Epoch 11/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.0983 - amazon_score: 0.9020 - acc: 0.9615Epoch 00010: val_loss did not improve
 1000/1000 [==============================] - 1180s - loss: 0.0983 - amazon_score: 0.9020 - acc: 0.9615 - val_loss: 0.0959 - val_amazon_score: 0.8998 - val_acc: 0.9622
+
 Epoch 12/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.0969 - amazon_score: 0.9044 - acc: 0.9620Epoch 00011: val_loss improved from 0.09541 to 0.09314, saving model to weights-v11-f4.hdf5
 1000/1000 [==============================] - 1181s - loss: 0.0969 - amazon_score: 0.9044 - acc: 0.9620 - val_loss: 0.0931 - val_amazon_score: 0.9046 - val_acc: 0.9636
+
 Epoch 13/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.0957 - amazon_score: 0.9051 - acc: 0.9626Epoch 00012: val_loss improved from 0.09314 to 0.09255, saving model to weights-v11-f4.hdf5
 1000/1000 [==============================] - 1182s - loss: 0.0956 - amazon_score: 0.9052 - acc: 0.9626 - val_loss: 0.0926 - val_amazon_score: 0.9057 - val_acc: 0.9644
+
 Epoch 14/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.0942 - amazon_score: 0.9061 - acc: 0.9631Epoch 00013: val_loss improved from 0.09255 to 0.09137, saving model to weights-v11-f4.hdf5
 1000/1000 [==============================] - 1177s - loss: 0.0943 - amazon_score: 0.9061 - acc: 0.9631 - val_loss: 0.0914 - val_amazon_score: 0.9064 - val_acc: 0.9641
+
 Epoch 15/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.0941 - amazon_score: 0.9064 - acc: 0.9630Epoch 00014: val_loss did not improve
 1000/1000 [==============================] - 1175s - loss: 0.0941 - amazon_score: 0.9064 - acc: 0.9630 - val_loss: 0.0916 - val_amazon_score: 0.9068 - val_acc: 0.9646
+
 Epoch 16/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.0936 - amazon_score: 0.9070 - acc: 0.9635Epoch 00015: val_loss did not improve
 
+
 Epoch 00015: reducing learning rate to 8.000000525498762e-06.
 1000/1000 [==============================] - 1175s - loss: 0.0936 - amazon_score: 0.9069 - acc: 0.9635 - val_loss: 0.0939 - val_amazon_score: 0.9042 - val_acc: 0.9631
+
 Epoch 17/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.0931 - amazon_score: 0.9082 - acc: 0.9634Epoch 00016: val_loss improved from 0.09137 to 0.09045, saving model to weights-v11-f4.hdf5
 1000/1000 [==============================] - 1181s - loss: 0.0931 - amazon_score: 0.9081 - acc: 0.9634 - val_loss: 0.0905 - val_amazon_score: 0.9070 - val_acc: 0.9651
+
 Epoch 18/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.0909 - amazon_score: 0.9100 - acc: 0.9643Epoch 00017: val_loss did not improve
 1000/1000 [==============================] - 1179s - loss: 0.0909 - amazon_score: 0.9100 - acc: 0.9643 - val_loss: 0.0929 - val_amazon_score: 0.9025 - val_acc: 0.9640
+
 Epoch 19/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.0915 - amazon_score: 0.9095 - acc: 0.9640Epoch 00018: val_loss improved from 0.09045 to 0.08984, saving model to weights-v11-f4.hdf5
 1000/1000 [==============================] - 1181s - loss: 0.0915 - amazon_score: 0.9095 - acc: 0.9640 - val_loss: 0.0898 - val_amazon_score: 0.9096 - val_acc: 0.9652
+
 Epoch 20/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.0906 - amazon_score: 0.9101 - acc: 0.9647Epoch 00019: val_loss improved from 0.08984 to 0.08967, saving model to weights-v11-f4.hdf5
 1000/1000 [==============================] - 1178s - loss: 0.0905 - amazon_score: 0.9101 - acc: 0.9647 - val_loss: 0.0897 - val_amazon_score: 0.9098 - val_acc: 0.9651
+
 Epoch 21/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.0914 - amazon_score: 0.9088 - acc: 0.9642Epoch 00020: val_loss did not improve
 1000/1000 [==============================] - 1175s - loss: 0.0914 - amazon_score: 0.9088 - acc: 0.9642 - val_loss: 0.0900 - val_amazon_score: 0.9086 - val_acc: 0.9650
+
 Epoch 22/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.0906 - amazon_score: 0.9095 - acc: 0.9646Epoch 00021: val_loss did not improve
 
+
 Epoch 00021: reducing learning rate to 1.6000001778593287e-06.
 1000/1000 [==============================] - 1174s - loss: 0.0905 - amazon_score: 0.9095 - acc: 0.9646 - val_loss: 0.0904 - val_amazon_score: 0.9075 - val_acc: 0.9653
+
 Epoch 23/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.0899 - amazon_score: 0.9111 - acc: 0.9649Epoch 00022: val_loss did not improve
 
+
 Epoch 00022: reducing learning rate to 3.200000264769187e-07.
 1000/1000 [==============================] - 1172s - loss: 0.0899 - amazon_score: 0.9111 - acc: 0.9649 - val_loss: 0.0923 - val_amazon_score: 0.9064 - val_acc: 0.9640
+
 Epoch 24/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.0899 - amazon_score: 0.9100 - acc: 0.9649Epoch 00023: val_loss did not improve
 
+
 Epoch 00023: reducing learning rate to 1e-07.
 1000/1000 [==============================] - 1172s - loss: 0.0899 - amazon_score: 0.9100 - acc: 0.9649 - val_loss: 0.0914 - val_amazon_score: 0.9068 - val_acc: 0.9640
+
 Epoch 25/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.0904 - amazon_score: 0.9096 - acc: 0.9644Epoch 00024: val_loss improved from 0.08967 to 0.08903, saving model to weights-v11-f4.hdf5
 1000/1000 [==============================] - 1174s - loss: 0.0905 - amazon_score: 0.9095 - acc: 0.9644 - val_loss: 0.0890 - val_amazon_score: 0.9089 - val_acc: 0.9652
+
 Epoch 26/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.0890 - amazon_score: 0.9110 - acc: 0.9652Epoch 00025: val_loss did not improve
 1000/1000 [==============================] - 1172s - loss: 0.0890 - amazon_score: 0.9110 - acc: 0.9652 - val_loss: 0.0904 - val_amazon_score: 0.9089 - val_acc: 0.9649
+
 Epoch 27/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.0919 - amazon_score: 0.9094 - acc: 0.9639Epoch 00026: val_loss did not improve
 1000/1000 [==============================] - 1173s - loss: 0.0919 - amazon_score: 0.9094 - acc: 0.9639 - val_loss: 0.0900 - val_amazon_score: 0.9075 - val_acc: 0.9654
+
 Epoch 28/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.0910 - amazon_score: 0.9097 - acc: 0.9644Epoch 00027: val_loss did not improve
 1000/1000 [==============================] - 1173s - loss: 0.0910 - amazon_score: 0.9097 - acc: 0.9644 - val_loss: 0.0912 - val_amazon_score: 0.9074 - val_acc: 0.9645
+
 Epoch 29/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.0914 - amazon_score: 0.9095 - acc: 0.9643Epoch 00028: val_loss improved from 0.08903 to 0.08770, saving model to weights-v11-f4.hdf5
 1000/1000 [==============================] - 1175s - loss: 0.0914 - amazon_score: 0.9095 - acc: 0.9644 - val_loss: 0.0877 - val_amazon_score: 0.9105 - val_acc: 0.9660
+
 Epoch 30/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.0905 - amazon_score: 0.9099 - acc: 0.9645Epoch 00029: val_loss improved from 0.08770 to 0.08709, saving model to weights-v11-f4.hdf5
 1000/1000 [==============================] - 1176s - loss: 0.0904 - amazon_score: 0.9099 - acc: 0.9645 - val_loss: 0.0871 - val_amazon_score: 0.9093 - val_acc: 0.9661

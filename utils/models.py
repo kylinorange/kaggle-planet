@@ -19,25 +19,27 @@ from keras.applications.inception_v3 import InceptionV3
 from resnet50 import ResNet50
 from leaky_resnet50 import LeakyResNet50
 
-def amazon_score(y_true, y_pred):
-    y_true = y_true > 0.2
-    y_pred = y_pred > 0.2
-
-    y_tp = tf.logical_and(y_true, y_pred)
-    y_fn = tf.logical_and(y_true, tf.logical_not(y_pred))
-    y_fp = tf.logical_and(tf.logical_not(y_true), y_pred)
-
-    tp = tf.reduce_sum(tf.to_float(y_tp))
-    fn = tf.reduce_sum(tf.to_float(y_fn))
-    fp = tf.reduce_sum(tf.to_float(y_fp))
-
-    p = tf.where(tp + fp > 0, tp / (tp + fp), 0)
-    r = tf.where(tp + fn > 0, tp / (tp + fn), 1)
-    s = tf.where(p + r > 0, 5 * p * r / (4 * p + r), 0)
-
-    return s
-
 class Models:
+
+    @staticmethod
+    def amazon_score(y_true, y_pred):
+        y_true = y_true > 0.2
+        y_pred = y_pred > 0.2
+
+        y_tp = tf.logical_and(y_true, y_pred)
+        y_fn = tf.logical_and(y_true, tf.logical_not(y_pred))
+        y_fp = tf.logical_and(tf.logical_not(y_true), y_pred)
+
+        tp = tf.reduce_sum(tf.to_float(y_tp))
+        fn = tf.reduce_sum(tf.to_float(y_fn))
+        fp = tf.reduce_sum(tf.to_float(y_fp))
+
+        p = tf.where(tp + fp > 0, tp / (tp + fp), 0)
+        r = tf.where(tp + fn > 0, tp / (tp + fn), 1)
+        s = tf.where(p + r > 0, 5 * p * r / (4 * p + r), 0)
+
+        return s
+
     @staticmethod
     def new_resnet50(input_shape=(256, 256, 3), leaky=False):
         base_model = None
@@ -58,7 +60,7 @@ class Models:
     #     for layer in model.layers[-24:]:
     #         layer.trainable = True
 
-        model.compile(metrics=[amazon_score, 'accuracy'],
+        model.compile(metrics=[Models.amazon_score, 'accuracy'],
                       loss='binary_crossentropy',
                       optimizer=Adam(lr=0.001))
         return model
@@ -78,7 +80,7 @@ class Models:
 
         model = Model(inputs=base_model.input, outputs=predictions)
 
-        model.compile(metrics=[amazon_score, 'accuracy'],
+        model.compile(metrics=[Models.amazon_score, 'accuracy'],
                       loss='binary_crossentropy',
                       optimizer=Adam(lr=0.0001))
         return model
@@ -120,7 +122,7 @@ class Models:
         model.add(Dropout(0.5))
         model.add(Dense(N_TAGS, activation='sigmoid'))
 
-        model.compile(metrics=[amazon_score, 'accuracy'],
+        model.compile(metrics=[Models.amazon_score, 'accuracy'],
                       loss='binary_crossentropy',
                       optimizer=Adam(lr=0.001))
         return model
