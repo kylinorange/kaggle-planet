@@ -1,3 +1,7 @@
+v11 - inception-v3
+
+v10 - leaky resnet
+
 v9 - resnet50 + jpg + data augment
 
 v8 - resnet50 + tif + data augment
