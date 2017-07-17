@@ -71,7 +71,7 @@ class Models:
 
     @staticmethod
     def new_incnet(input_shape=(256, 256, 3)):
-        base_model = InceptionV3(weights=None, include_top=False, pooling='avg', input_tensor = Input(shape=input_shape))
+        base_model = InceptionV3(weights='imagenet', include_top=False, pooling='avg', input_tensor = Input(shape=input_shape))
 
         x = base_model.output
         predictions = Dense(17, activation='sigmoid')(x)
@@ -80,7 +80,7 @@ class Models:
 
         model.compile(metrics=[amazon_score, 'accuracy'],
                       loss='binary_crossentropy',
-                      optimizer=Adam(lr=0.001))
+                      optimizer=Adam(lr=0.0001))
         return model
 
     @staticmethod

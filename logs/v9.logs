@@ -365,6 +365,11 @@ Epoch 30/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.0938 - amazon_score: 0.9069 - acc: 0.9632Epoch 00029: val_loss did not improve
 1000/1000 [==============================] - 1481s - loss: 0.0939 - amazon_score: 0.9069 - acc: 0.9632 - val_loss: 0.0933 - val_amazon_score: 0.9048 - val_acc: 0.9645
 
+
+
+
+
+
 Training with val = 3
 
 Epoch 1/30

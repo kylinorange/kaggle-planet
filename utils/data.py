@@ -110,24 +110,27 @@ def augment(im, orient = None):
     return im.reshape(shape)
 
 class Data:
-    def __init__(self, tif=False, toy=None, train=[0,1,2,3,4]):
+    def __init__(self, tif=False, toy=None, train=None, fold=5):
         n = N_TRAIN
         if toy is not None:
             n = toy
         self.n_train = n
+        if train is None:
+            train = range(fold)
+        self.fold = fold
 
         self.c = 4 if tif else 3
 
         print('Loading data...')
-        self.X = [0] * 5
-        self.y = [0] * 5
+        self.X = [0] * self.fold
+        self.y = [0] * self.fold
         for i in train:
             if tif:
                 self.X[i] = np.load('X.{}.npy'.format(i))
                 self.y[i] = np.load('y.{}.npy'.format(i))
             else:
                 self.X[i], self.y[i] = get_training_data(
-                    [x for x in range(n) if x % 5 == i], tif=tif, verbose=True)
+                    [x for x in range(n) if x % self.fold == i], tif=tif, verbose=True)
             print('Loaded fold {}.'.format(i))
         print('Loading done')
 
@@ -137,7 +140,7 @@ class Data:
         while 1:
             f = val
             while f == val:
-                f = random.randint(0, 4)
+                f = random.randint(0, self.fold - 1)
             yield self.data_from_fold(f, batch_size)
 
     # randomly generate validation data
@@ -163,8 +166,8 @@ class Data:
             aug = np.zeros(shape)
             for i in range(end - start):
                 cur = start + i
-                f = cur % 5
-                k = int(cur / 5 + 1e-3)
+                f = cur % self.fold
+                k = int(cur / self.fold + 1e-3)
                 for orient in range(8):
                     aug[8 * i + orient,:,:,:] = augment(self.X[f][k,:,:,:], orient=orient)
             yield aug
