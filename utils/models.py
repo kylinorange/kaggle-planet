@@ -15,6 +15,8 @@ from keras.layers import Input
 from keras.models import Model
 from keras.applications.inception_v3 import InceptionV3
 
+import numpy as np
+
 from resnet50 import ResNet50
 from leaky_resnet50 import LeakyResNet50
 
@@ -142,9 +144,9 @@ class TargetStopping(Callback):
         self.stopped_epoch = 0
 
         if mode not in ['auto', 'min', 'max']:
-            warnings.warn('TargetStopping mode %s is unknown, '
-                          'fallback to auto mode.' % (self.mode),
-                          RuntimeWarning)
+            # warnings.warn('TargetStopping mode %s is unknown, '
+            #               'fallback to auto mode.' % (self.mode),
+            #               RuntimeWarning)
             mode = 'auto'
 
         if mode == 'min':
@@ -163,12 +165,12 @@ class TargetStopping(Callback):
 
     def on_epoch_end(self, epoch, logs=None):
         current = logs.get(self.monitor)
-        if current is None:
-            warnings.warn(
-                'TargetStopping conditioned on metric `%s` '
-                'which is not available. Available metrics are: %s' %
-                (self.monitor, ','.join(list(logs.keys()))), RuntimeWarning
-            )
+        # if current is None:
+        #     warnings.warn(
+        #         'TargetStopping conditioned on metric `%s` '
+        #         'which is not available. Available metrics are: %s' %
+        #         (self.monitor, ','.join(list(logs.keys()))), RuntimeWarning
+        #     )
 
         if self.monitor_op(current, self.target):
             self.stopped_epoch = epoch
