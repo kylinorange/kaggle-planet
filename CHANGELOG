@@ -1,8 +1,8 @@
-v13 - multi-gpu training
+v13 - multi-gpu training, training with all data, v11 + pretrain final layer for 1 epoch
 
 v12 - v11 + pretrained weights and half trainable layers
 
-v11 - inception-v3
+v11 - inception-v3 (w/ pretrained weights)
 
 v10 - leaky resnet
 
