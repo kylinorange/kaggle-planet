@@ -1,3 +1,5 @@
+v13 - multi-gpu training
+
 v12 - v11 + pretrained weights and half trainable layers
 
 v11 - inception-v3

@@ -136,3 +136,80 @@ Epoch 29/30
 Epoch 30/30
  999/1000 [============================>.] - ETA: 1s - loss: 0.0905 - amazon_score: 0.9099 - acc: 0.9645Epoch 00029: val_loss improved from 0.08770 to 0.08709, saving model to weights-v11-f4.hdf5
 1000/1000 [==============================] - 1176s - loss: 0.0904 - amazon_score: 0.9099 - acc: 0.9645 - val_loss: 0.0871 - val_amazon_score: 0.9093 - val_acc: 0.9661
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 1/30
+ 999/1000 [============================>.] - ETA: 1s - loss: 0.1217 - amazon_score: 0.8835 - acc: 0.9546Epoch 00000: val_loss improved from inf to 0.09905, saving model to weights-v11-f4-pretrained.hdf5
+1000/1000 [==============================] - 1223s - loss: 0.1217 - amazon_score: 0.8835 - acc: 0.9546 - val_loss: 0.0990 - val_amazon_score: 0.9022 - val_acc: 0.9622
+Epoch 2/30
+ 999/1000 [============================>.] - ETA: 1s - loss: 0.0930 - amazon_score: 0.9090 - acc: 0.9644Epoch 00001: val_loss improved from 0.09905 to 0.09605, saving model to weights-v11-f4-pretrained.hdf5
+1000/1000 [==============================] - 1177s - loss: 0.0931 - amazon_score: 0.9090 - acc: 0.9644 - val_loss: 0.0961 - val_amazon_score: 0.9016 - val_acc: 0.9631
+Epoch 3/30
+ 999/1000 [============================>.] - ETA: 1s - loss: 0.0876 - amazon_score: 0.9149 - acc: 0.9662Epoch 00002: val_loss improved from 0.09605 to 0.09378, saving model to weights-v11-f4-pretrained.hdf5
+1000/1000 [==============================] - 1182s - loss: 0.0875 - amazon_score: 0.9149 - acc: 0.9662 - val_loss: 0.0938 - val_amazon_score: 0.9084 - val_acc: 0.9638
+Epoch 4/30
+ 999/1000 [============================>.] - ETA: 1s - loss: 0.0841 - amazon_score: 0.9170 - acc: 0.9676Epoch 00003: val_loss did not improve
+1000/1000 [==============================] - 1188s - loss: 0.0841 - amazon_score: 0.9170 - acc: 0.9676 - val_loss: 0.0948 - val_amazon_score: 0.9012 - val_acc: 0.9640
+Epoch 5/30
+ 999/1000 [============================>.] - ETA: 1s - loss: 0.0813 - amazon_score: 0.9207 - acc: 0.9684Epoch 00004: val_loss improved from 0.09378 to 0.09150, saving model to weights-v11-f4-pretrained.hdf5
+1000/1000 [==============================] - 1202s - loss: 0.0813 - amazon_score: 0.9207 - acc: 0.9684 - val_loss: 0.0915 - val_amazon_score: 0.9061 - val_acc: 0.9655
+Epoch 6/30
+ 999/1000 [============================>.] - ETA: 1s - loss: 0.0793 - amazon_score: 0.9231 - acc: 0.9692Epoch 00005: val_loss did not improve
+1000/1000 [==============================] - 1194s - loss: 0.0793 - amazon_score: 0.9231 - acc: 0.9692 - val_loss: 0.0947 - val_amazon_score: 0.9069 - val_acc: 0.9638
+Epoch 7/30
+ 999/1000 [============================>.] - ETA: 1s - loss: 0.0763 - amazon_score: 0.9264 - acc: 0.9702Epoch 00006: val_loss did not improve
+
+Epoch 00006: reducing learning rate to 1.9999999494757503e-05.
+1000/1000 [==============================] - 1197s - loss: 0.0763 - amazon_score: 0.9264 - acc: 0.9701 - val_loss: 0.0985 - val_amazon_score: 0.9100 - val_acc: 0.9637
+Epoch 8/30
+ 999/1000 [============================>.] - ETA: 1s - loss: 0.0686 - amazon_score: 0.9335 - acc: 0.9731Epoch 00007: val_loss improved from 0.09150 to 0.08680, saving model to weights-v11-f4-pretrained.hdf5
+1000/1000 [==============================] - 1212s - loss: 0.0686 - amazon_score: 0.9335 - acc: 0.9732 - val_loss: 0.0868 - val_amazon_score: 0.9143 - val_acc: 0.9674
+Epoch 9/30
+ 999/1000 [============================>.] - ETA: 1s - loss: 0.0649 - amazon_score: 0.9372 - acc: 0.9746Epoch 00008: val_loss did not improve
+1000/1000 [==============================] - 1212s - loss: 0.0649 - amazon_score: 0.9372 - acc: 0.9746 - val_loss: 0.0919 - val_amazon_score: 0.9111 - val_acc: 0.9660
+Epoch 10/30
+ 999/1000 [============================>.] - ETA: 1s - loss: 0.0612 - amazon_score: 0.9409 - acc: 0.9763Epoch 00009: val_loss did not improve
+
+Epoch 00009: reducing learning rate to 3.999999898951501e-06.
+1000/1000 [==============================] - 1211s - loss: 0.0612 - amazon_score: 0.9409 - acc: 0.9763 - val_loss: 0.0893 - val_amazon_score: 0.9122 - val_acc: 0.9672
+Epoch 11/30
+ 999/1000 [============================>.] - ETA: 1s - loss: 0.0580 - amazon_score: 0.9443 - acc: 0.9775Epoch 00010: val_loss did not improve
+
+Epoch 00010: reducing learning rate to 7.999999979801942e-07.
+1000/1000 [==============================] - 1213s - loss: 0.0580 - amazon_score: 0.9443 - acc: 0.9775 - val_loss: 0.0912 - val_amazon_score: 0.9119 - val_acc: 0.9671
+Epoch 12/30
+ 999/1000 [============================>.] - ETA: 1s - loss: 0.0585 - amazon_score: 0.9441 - acc: 0.9774Epoch 00011: val_loss did not improve
+
+Epoch 00011: reducing learning rate to 1.600000018697756e-07.
+1000/1000 [==============================] - 1210s - loss: 0.0585 - amazon_score: 0.9441 - acc: 0.9774 - val_loss: 0.0918 - val_amazon_score: 0.9092 - val_acc: 0.9665
+Epoch 13/30
+ 999/1000 [============================>.] - ETA: 1s - loss: 0.0572 - amazon_score: 0.9448 - acc: 0.9778Epoch 00012: val_loss did not improve
+
+Epoch 00012: reducing learning rate to 1e-07.
+1000/1000 [==============================] - 1211s - loss: 0.0572 - amazon_score: 0.9448 - acc: 0.9778 - val_loss: 0.0901 - val_amazon_score: 0.9122 - val_acc: 0.9670
+Epoch 14/30
+ 999/1000 [============================>.] - ETA: 1s - loss: 0.0570 - amazon_score: 0.9450 - acc: 0.9779Epoch 00013: val_loss did not improve
+1000/1000 [==============================] - 1214s - loss: 0.0569 - amazon_score: 0.9450 - acc: 0.9779 - val_loss: 0.0896 - val_amazon_score: 0.9120 - val_acc: 0.9673
+Epoch 15/30
+ 999/1000 [============================>.] - ETA: 1s - loss: 0.0565 - amazon_score: 0.9459 - acc: 0.9781Epoch 00014: val_loss did not improve
+1000/1000 [==============================] - 1210s - loss: 0.0565 - amazon_score: 0.9458 - acc: 0.9780 - val_loss: 0.0912 - val_amazon_score: 0.9120 - val_acc: 0.9667
+Epoch 16/30
+ 999/1000 [============================>.] - ETA: 1s - loss: 0.0576 - amazon_score: 0.9446 - acc: 0.9776Epoch 00015: val_loss did not improve
+1000/1000 [==============================] - 1210s - loss: 0.0576 - amazon_score: 0.9446 - acc: 0.9776 - val_loss: 0.0903 - val_amazon_score: 0.9117 - val_acc: 0.9666
+Epoch 17/30
+ 999/1000 [============================>.] - ETA: 1s - loss: 0.0571 - amazon_score: 0.9448 - acc: 0.9780Epoch 00016: val_loss did not improve
+1000/1000 [==============================] - 1213s - loss: 0.0571 - amazon_score: 0.9448 - acc: 0.9780 - val_loss: 0.0910 - val_amazon_score: 0.9111 - val_acc: 0.9673
+Epoch 18/30
+  51/1000 [>.............................] - ETA: 1064s - loss: 0.0584 - amazon_score: 0.9465 - acc: 0.9776

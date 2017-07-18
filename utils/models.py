@@ -6,8 +6,7 @@ from keras.layers.convolutional import Conv2D, MaxPooling2D
 from keras.layers.pooling import GlobalAveragePooling2D
 from keras.layers.normalization import BatchNormalization
 from keras.utils import np_utils
-from keras.callbacks import ModelCheckpoint
-from keras.callbacks import ReduceLROnPlateau
+from keras.callbacks import ModelCheckpoint, ReduceLROnPlateau, Callback
 from keras.optimizers import SGD, Adam
 
 from keras.preprocessing import image
@@ -132,3 +131,50 @@ class Models:
         model = new_bob()
         model.load_weights(path)
         return model
+
+class TargetStopping(Callback):
+    def __init__(self, monitor='loss', target=0, verbose=0, mode='auto'):
+        super(TargetStopping, self).__init__()
+
+        self.monitor = monitor
+        self.target = target
+        self.verbose = verbose
+        self.stopped_epoch = 0
+
+        if mode not in ['auto', 'min', 'max']:
+            warnings.warn('TargetStopping mode %s is unknown, '
+                          'fallback to auto mode.' % (self.mode),
+                          RuntimeWarning)
+            mode = 'auto'
+
+        if mode == 'min':
+            self.monitor_op = np.less
+        elif mode == 'max':
+            self.monitor_op = np.greater
+        else:
+            if 'acc' in self.monitor or self.monitor.startswith('fmeasure'):
+                self.monitor_op = np.greater
+            else:
+                self.monitor_op = np.less
+
+    def on_train_begin(self, logs=None):
+        # Allow instances to be re-used
+        self.stopped_epoch = 0
+
+    def on_epoch_end(self, epoch, logs=None):
+        current = logs.get(self.monitor)
+        if current is None:
+            warnings.warn(
+                'TargetStopping conditioned on metric `%s` '
+                'which is not available. Available metrics are: %s' %
+                (self.monitor, ','.join(list(logs.keys()))), RuntimeWarning
+            )
+
+        if self.monitor_op(current, self.target):
+            self.stopped_epoch = epoch
+            self.model.stop_training = True
+
+    def on_train_end(self, logs=None):
+        if self.stopped_epoch > 0 and self.verbose > 0:
+            print('Epoch %05d: early stopping' % (self.stopped_epoch))
+

@@ -62,7 +62,7 @@ def preprocess_image(img):
 
     if img.shape[2] == 3:
         # jpg
-        img = img / 255 - 0.5
+        img = 2 * (img / 255 - 0.5)
     else:
         # tif
         for i in range(4):
