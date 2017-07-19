@@ -73,6 +73,19 @@ class Tags:
                 y_train[i][self.tag_map[tag]] = 1.
         return y_train
 
+
+    def pred_to_output(self, pred, thres):
+        result = pd.DataFrame({
+            'image_name':
+                ['test_{}'.format(i) for i in range(N_TEST_T)] + ['file_{}'.format(i) for i in range(N_TEST_F)],
+            'tags': ['' for i in range(N_TEST)]
+        })
+        for i in range(len(pred)):
+            current_pred = pred[i]
+            current_tag = tags.pred_to_tags(current_pred, thres=thres)
+            result.iat[i, 1] = current_tag
+        return result
+
     def pred_to_tags(self, y, thres=[0.2]*N_TAGS):
         # weather_labels = [0, 3, 9, 10]
         weather_labels = []
