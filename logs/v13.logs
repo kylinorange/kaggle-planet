@@ -1,0 +1,109 @@
+Epoch 00000: 1300/1300 [==============================] - 496s - loss: 0.1656 - amazon_score: 0.8337 - acc: 0.9386
+
+Epoch 00001: loss improved from inf to 0.10427, saving model to weights-v13-n3.hdf5
+Epoch 00001: loss improved from inf to 0.10624, saving model to weights-v13-n0.hdf5
+Epoch 00001: loss improved from inf to 0.10679, saving model to weights-v13-n6.hdf5
+Epoch 00001: loss improved from inf to 0.10611, saving model to weights-v13-n7.hdf5
+Epoch 00001: loss improved from inf to 0.10572, saving model to weights-v13-n4.hdf5
+Epoch 00001: loss improved from inf to 0.10689, saving model to weights-v13-n2.hdf5
+Epoch 00001: loss improved from inf to 0.10645, saving model to weights-v13-n5.hdf5
+Epoch 00001: loss improved from inf to 0.10440, saving model to weights-v13-n1.hdf5
+
+Epoch 00002: loss improved from 0.10624 to 0.09272, saving model to weights-v13-n0.hdf5
+Epoch 00002: loss improved from 0.10427 to 0.09295, saving model to weights-v13-n3.hdf5
+Epoch 00002: loss improved from 0.10689 to 0.09333, saving model to weights-v13-n2.hdf5
+Epoch 00002: loss improved from 0.10572 to 0.09239, saving model to weights-v13-n4.hdf5
+Epoch 00002: loss improved from 0.10679 to 0.09320, saving model to weights-v13-n6.hdf5
+Epoch 00002: loss improved from 0.10611 to 0.09284, saving model to weights-v13-n7.hdf5
+Epoch 00002: loss improved from 0.10645 to 0.09185, saving model to weights-v13-n5.hdf5
+Epoch 00002: loss improved from 0.10440 to 0.09427, saving model to weights-v13-n1.hdf5
+
+Epoch 00003: loss improved from 0.09272 to 0.08843, saving model to weights-v13-n0.hdf5
+Epoch 00003: loss improved from 0.09295 to 0.08729, saving model to weights-v13-n3.hdf5
+Epoch 00003: loss improved from 0.09333 to 0.08701, saving model to weights-v13-n2.hdf5
+Epoch 00003: loss improved from 0.09239 to 0.08718, saving model to weights-v13-n4.hdf5
+Epoch 00003: loss improved from 0.09320 to 0.08709, saving model to weights-v13-n6.hdf5
+Epoch 00003: loss improved from 0.09284 to 0.08689, saving model to weights-v13-n7.hdf5
+Epoch 00003: loss improved from 0.09185 to 0.08805, saving model to weights-v13-n5.hdf5
+Epoch 00003: loss improved from 0.09427 to 0.08802, saving model to weights-v13-n1.hdf5
+
+Epoch 00004: loss improved from 0.08843 to 0.08493, saving model to weights-v13-n0.hdf5
+Epoch 00004: loss improved from 0.08729 to 0.08525, saving model to weights-v13-n3.hdf5
+Epoch 00004: loss improved from 0.08701 to 0.08535, saving model to weights-v13-n2.hdf5
+Epoch 00004: loss improved from 0.08718 to 0.08395, saving model to weights-v13-n4.hdf5
+Epoch 00004: loss improved from 0.08709 to 0.08420, saving model to weights-v13-n6.hdf5
+Epoch 00004: loss improved from 0.08689 to 0.08371, saving model to weights-v13-n7.hdf5
+Epoch 00004: loss improved from 0.08805 to 0.08377, saving model to weights-v13-n5.hdf5
+Epoch 00004: loss improved from 0.08802 to 0.08447, saving model to weights-v13-n1.hdf5
+
+Epoch 00005: loss improved from 0.08493 to 0.08174, saving model to weights-v13-n0.hdf5
+Epoch 00005: loss improved from 0.08525 to 0.08071, saving model to weights-v13-n3.hdf5
+Epoch 00005: loss improved from 0.08535 to 0.08074, saving model to weights-v13-n2.hdf5
+Epoch 00005: loss improved from 0.08395 to 0.08151, saving model to weights-v13-n4.hdf5
+Epoch 00005: loss improved from 0.08420 to 0.08200, saving model to weights-v13-n6.hdf5
+Epoch 00005: loss improved from 0.08371 to 0.08106, saving model to weights-v13-n7.hdf5
+Epoch 00005: loss improved from 0.08377 to 0.08067, saving model to weights-v13-n5.hdf5
+Epoch 00005: loss improved from 0.08447 to 0.08080, saving model to weights-v13-n1.hdf5
+
+Epoch 00006: loss improved from 0.08174 to 0.07913, saving model to weights-v13-n0.hdf5
+Epoch 00006: loss improved from 0.08074 to 0.07901, saving model to weights-v13-n2.hdf5
+Epoch 00006: loss improved from 0.08071 to 0.07796, saving model to weights-v13-n3.hdf5
+Epoch 00006: loss improved from 0.08151 to 0.07976, saving model to weights-v13-n4.hdf5
+Epoch 00006: loss improved from 0.08200 to 0.07982, saving model to weights-v13-n6.hdf5
+Epoch 00006: loss improved from 0.08106 to 0.07859, saving model to weights-v13-n7.hdf5
+Epoch 00006: loss improved from 0.08067 to 0.07833, saving model to weights-v13-n5.hdf5
+Epoch 00006: loss improved from 0.08080 to 0.07881, saving model to weights-v13-n1.hdf5
+
+Epoch 00007: loss improved from inf to 0.07098, saving model to weights-v13-n0.hdf5
+Epoch 00007: loss improved from inf to 0.07067, saving model to weights-v13-n2.hdf5
+Epoch 00007: loss improved from inf to 0.07243, saving model to weights-v13-n3.hdf5
+Epoch 00007: loss improved from inf to 0.07142, saving model to weights-v13-n4.hdf5
+Epoch 00007: loss improved from inf to 0.07062, saving model to weights-v13-n6.hdf5
+Epoch 00007: loss improved from inf to 0.07113, saving model to weights-v13-n7.hdf5
+Epoch 00007: loss improved from inf to 0.07169, saving model to weights-v13-n5.hdf5
+Epoch 00007: loss improved from inf to 0.07136, saving model to weights-v13-n1.hdf5
+
+Epoch 00008: loss improved from 0.07098 to 0.06777, saving model to weights-v13-n0.hdf5
+Epoch 00008: loss improved from 0.07067 to 0.06839, saving model to weights-v13-n2.hdf5
+Epoch 00008: loss improved from 0.07243 to 0.06803, saving model to weights-v13-n3.hdf5
+Epoch 00008: loss improved from 0.07142 to 0.06780, saving model to weights-v13-n4.hdf5
+Epoch 00008: loss improved from 0.07062 to 0.06753, saving model to weights-v13-n6.hdf5
+Epoch 00008: loss improved from 0.07113 to 0.06700, saving model to weights-v13-n7.hdf5
+Epoch 00008: loss improved from 0.07169 to 0.06818, saving model to weights-v13-n5.hdf5
+Epoch 00008: loss improved from 0.07136 to 0.06831, saving model to weights-v13-n1.hdf5
+
+Epoch 00009: loss improved from 0.06777 to 0.06597, saving model to weights-v13-n0.hdf5
+Epoch 00009: loss improved from 0.06839 to 0.06631, saving model to weights-v13-n2.hdf5
+Epoch 00009: loss improved from 0.06803 to 0.06512, saving model to weights-v13-n3.hdf5
+Epoch 00009: loss improved from 0.06780 to 0.06506, saving model to weights-v13-n4.hdf5
+Epoch 00009: loss improved from 0.06753 to 0.06643, saving model to weights-v13-n6.hdf5
+Epoch 00009: loss improved from 0.06700 to 0.06584, saving model to weights-v13-n7.hdf5
+Epoch 00009: loss improved from 0.06818 to 0.06588, saving model to weights-v13-n5.hdf5
+Epoch 00009: loss improved from 0.06831 to 0.06504, saving model to weights-v13-n1.hdf5
+
+Epoch 00010: loss improved from inf to 0.06505, saving model to weights-v13-n0.hdf5
+Epoch 00010: loss improved from inf to 0.06454, saving model to weights-v13-n2.hdf5
+Epoch 00010: loss improved from inf to 0.06410, saving model to weights-v13-n3.hdf5
+Epoch 00010: loss improved from inf to 0.06391, saving model to weights-v13-n4.hdf5
+Epoch 00010: loss improved from inf to 0.06588, saving model to weights-v13-n6.hdf5
+Epoch 00010: loss improved from inf to 0.06519, saving model to weights-v13-n7.hdf5
+Epoch 00010: loss improved from inf to 0.06470, saving model to weights-v13-n5.hdf5
+Epoch 00010: loss improved from inf to 0.06461, saving model to weights-v13-n1.hdf5
+
+Epoch 00011: loss did not improve
+Epoch 00011: loss did not improve
+Epoch 00011: loss improved from 0.06410 to 0.06385, saving model to weights-v13-n3.hdf5
+Epoch 00011: loss did not improve
+Epoch 00011: loss improved from 0.06588 to 0.06447, saving model to weights-v13-n6.hdf5
+Epoch 00011: loss improved from 0.06519 to 0.06382, saving model to weights-v13-n7.hdf5
+Epoch 00011: loss improved from 0.06470 to 0.06411, saving model to weights-v13-n5.hdf5
+Epoch 00011: early stopping
+Epoch 00011: loss improved from 0.06461 to 0.06423, saving model to weights-v13-n1.hdf5
+
+Epoch 00012: loss improved from 0.06505 to 0.06372, saving model to weights-v13-n0.hdf5
+Epoch 00012: loss did not improve
+Epoch 00012: loss did not improve
+Epoch 00012: loss did not improve
+Epoch 00012: loss improved from 0.06447 to 0.06398, saving model to weights-v13-n6.hdf5
+Epoch 00012: loss did not improve
+Epoch 00012: loss improved from 0.06423 to 0.06311, saving model to weights-v13-n1.hdf5

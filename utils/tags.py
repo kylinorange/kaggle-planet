@@ -19,6 +19,10 @@ if not os.path.exists(PLANET_KAGGLE_ROOT):
     PLANET_KAGGLE_ROOT = '/Users/jiayou/Documents/Kaggle Data/Amazon'
 
 N_TAGS = 17
+N_TRAIN = 40479
+N_TEST_T = 40669
+N_TEST_F = 20522
+N_TEST = N_TEST_T + N_TEST_F
 
 def get_tag_map():
     train_labels = pd.read_csv(os.path.join(PLANET_KAGGLE_ROOT, 'train_v2.csv'))
