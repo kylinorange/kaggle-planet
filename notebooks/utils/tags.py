@@ -86,7 +86,7 @@ class Tags:
         })
         for i in range(len(pred)):
             current_pred = pred[i]
-            current_tag = self.pred_to_tags(current_pred, thres=thres)
+            current_tag = self.pred_to_tags_2(current_pred, thres=thres)
             result.iat[i, 1] = current_tag
         return result
 
@@ -107,6 +107,30 @@ class Tags:
                     tags.append(tag)
     #     tags.append(label_idx[w])
         return ' '.join(tags)
+
+    def pred_to_tags_2(self, y, thres=[0.2]*N_TAGS):
+        weather_labels = [0, 3, 9, 10]
+        maxw = 0
+        w = 3
+        tag_list = []
+        for i in range(N_TAGS):
+            tag = self.tag_idx[i]
+            if i in weather_labels:
+                if y[i] > maxw:
+                    maxw = y[i]
+                    w = i
+            else:
+                if y[i] >= thres[i]:
+                    tag_list.append(tag)
+        if maxw >= 0.5:
+            for i in weather_labels:
+                if y[i] >= 0.5:
+                    tag_list.append(self.tag_idx[i])
+        else:
+            for i in weather_labels:
+                if y[i] >= thres[i]:
+                    tag_list.append(self.tag_idx[i])
+        return ' '.join(tag_list)
 
     def plot_roc(self, pred, true, title='Receiver Operating Characteristic'):
         fig = plt.figure(figsize=(15,15))
