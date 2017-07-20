@@ -86,7 +86,7 @@ class Tags:
         })
         for i in range(len(pred)):
             current_pred = pred[i]
-            current_tag = tags.pred_to_tags(current_pred, thres=thres)
+            current_tag = self.pred_to_tags(current_pred, thres=thres)
             result.iat[i, 1] = current_tag
         return result
 
